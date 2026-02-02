@@ -191,6 +191,15 @@
         }
 
         /* Research */
+        .research-overview {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .research-overview strong {
+            color: var(--text);
+        }
+
         .research-areas {
             display: grid;
             gap: 2.5rem;
@@ -542,22 +551,23 @@
 
     <section id="research">
         <h2>Research</h2>
+        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>assembly</strong> free of single-reference bias, through <strong>pangenome<span class="x">&times;</span>compression</strong> into unified queryable graphs, to <strong>pangenome<span class="x">&times;</span>association</strong> powered by graph-based genotyping — applying it all to <strong>cancer<span class="x">&times;</span>pangenomics</strong> and <strong>complex<span class="x">&times;</span>diseases</strong>.</p>
         <div class="research-areas">
             <div class="research-area">
-                <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
-                <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single reference-based approaches miss.</p>
+                <h3>Pangenome<span class="x">&times;</span>Assembly</h3>
+                <p>We reduce the cost and complexity of germline genome assembly, making personalized pangenomics practical for clinical and research applications. This includes developing streamlined pipelines and benchmarking assembly approaches across sequencing platforms.</p>
             </div>
             <div class="research-area">
                 <h3>Pangenome<span class="x">&times;</span>Compression</h3>
                 <p>We develop algorithms and data structures for compressing pangenome alignments and graphs. Using techniques like tracepoints and implicit representations, we enable storage and querying of population-scale genomic data without sacrificing base-level resolution.</p>
             </div>
             <div class="research-area">
-                <h3>Pangenome<span class="x">&times;</span>Assembly</h3>
-                <p>We reduce the cost and complexity of germline genome assembly, making personalized pangenomics practical for clinical and research applications. This includes developing streamlined pipelines and benchmarking assembly approaches across sequencing platforms.</p>
-            </div>
-            <div class="research-area">
                 <h3>Pangenome<span class="x">&times;</span>Association</h3>
                 <p>We leverage pangenomes for genome-wide association studies, enabling discovery of trait associations with structural variants and sequences absent from linear reference genomes. Our methods use pangenome graph features as genetic markers rather than variants called against a reference.</p>
+            </div>
+            <div class="research-area">
+                <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
+                <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single reference-based approaches miss.</p>
             </div>
         </div>
     </section>
