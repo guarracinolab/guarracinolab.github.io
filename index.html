@@ -351,6 +351,11 @@
             padding-left: 1.5rem;
         }
 
+        .pub.last-author {
+            border-left: 3px solid #b34e18;
+            padding-left: 1.5rem;
+        }
+
         .pub-badges {
             display: inline-flex;
             gap: 0.35rem;
@@ -359,16 +364,23 @@
             margin-left: 0.5rem;
         }
 
-        .software-badge {
+        .software-badge, .preprint-badge {
             font-family: var(--mono);
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            background: #b34e18;
             color: white;
             padding: 0.2em 0.5em;
             border-radius: 3px;
             vertical-align: middle;
+        }
+
+        .software-badge {
+            background: #b34e18;
+        }
+
+        .preprint-badge {
+            background: #6b7280;
         }
 
         .pub-venue {
@@ -864,7 +876,7 @@
             <div class="software-entry">
                 <span class="sw-name"><a href="https://github.com/AndreaGuarracino/tracepoints" target="_blank">Tracepoints</a></span> <span class="x">–</span>
                 <span class="sw-desc">Alignment compression with adaptive tracepoints.</span> <span class="x">–</span>
-                <span class="sw-links"><span class="sw-cite" style="font-style: italic;">Kaushan et al., in preparation</span></span>
+                <span class="sw-links"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank" class="sw-cite">Kaushan et al., bioRxiv 2026</a></span>
             </div>
         </div>
     </section>
@@ -956,6 +968,18 @@
     <section id="publications" class="section-alt">
         <h2>Selected<span class="x">&times;</span>Publications</h2>
         <div class="pub-list">
+            <div class="pub last-author">
+                <div class="pub-title"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank">Adaptive tracepoints for pangenome alignment compression</a><span class="pub-badges"><span class="preprint-badge">Preprint</span><span class="software-badge">Software</span></span></div>
+                <div class="pub-authors">Kaushan H, Marco-Sola S, Garrison E, Prins P, <span class="highlight">Guarracino A</span></div>
+                <div class="pub-venue">bioRxiv (2026)</div>
+                <div class="pub-links"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank">DOI</a></div>
+            </div>
+            <div class="pub first-author">
+                <div class="pub-title"><a href="https://doi.org/10.64898/2026.02.05.704023" target="_blank">Population-scalable genotyping from low-coverage sequencing data using pangenome graphs</a><span class="pub-badges"><span class="preprint-badge">Preprint</span><span class="software-badge">Software</span></span></div>
+                <div class="pub-authors">Bolognini D*, <span class="highlight">Guarracino A</span>*, Paleni C, Dudley TS, Iacoviello L, Raveane A, Sudmant PH, Garrison E, Soranzo N</div>
+                <div class="pub-venue">bioRxiv (2026)</div>
+                <div class="pub-links"><a href="https://doi.org/10.64898/2026.02.05.704023" target="_blank">DOI</a></div>
+            </div>
             <div class="pub first-author">
                 <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank">The formation and propagation of human Robertsonian chromosomes</a></div>
                 <div class="pub-authors">de Lima LG*, <span class="highlight">Guarracino A</span>*, Koren S*, ... Garrison E, Phillippy AM, Gerton JL</div>
