@@ -30,6 +30,8 @@
             --mono: 'IBM Plex Mono', monospace;
             --sans: 'IBM Plex Sans', sans-serif;
             --display: 'Archivo Black', sans-serif;
+            --card-pad-y: 0.75rem;
+            --card-pad-x: 1.25rem;
         }
 
         * {
@@ -230,7 +232,7 @@
 
         .research-area {
             border-left: 3px solid var(--accent);
-            padding: 0.875rem 1.5rem;
+            padding: var(--card-pad-y) var(--card-pad-x);
             background: var(--bg);
             border-radius: 0.25rem;
             display: flex;
@@ -294,7 +296,7 @@
         .software-entry {
             line-height: 1.55;
             background: var(--bg-alt);
-            padding: 0.5rem 1rem;
+            padding: var(--card-pad-y) var(--card-pad-x);
             border-radius: 0.25rem;
         }
 
@@ -348,7 +350,7 @@
 
         .pub {
             background: var(--bg);
-            padding: 0.875rem 1.5rem;
+            padding: var(--card-pad-y) var(--card-pad-x);
             border-radius: 0.25rem;
         }
 
@@ -381,12 +383,12 @@
 
         .pub.first-author {
             border-left: 3px solid var(--accent);
-            padding-left: 1.5rem;
+            padding-left: var(--card-pad-x);
         }
 
         .pub.last-author {
             border-left: 3px solid #b34e18;
-            padding-left: 1.5rem;
+            padding-left: var(--card-pad-x);
         }
 
         .pub-badges {
@@ -455,7 +457,7 @@
         .team-member {
             text-align: center;
             background: var(--bg);
-            padding: 1.25rem;
+            padding: var(--card-pad-y) var(--card-pad-x);
             border-radius: 0.25rem;
         }
 
@@ -813,7 +815,7 @@
             .research-area:nth-child(even) {
                 flex-direction: column;
                 gap: 0.875rem;
-                padding: 0.875rem;
+                padding: var(--card-pad-y) var(--card-pad-x);
                 text-align: center;
                 border-left: none;
                 border-right: none;
@@ -873,8 +875,8 @@
             .pub.first-author {
                 border-left: none;
                 border-top: 3px solid var(--accent);
-                padding-left: 0;
-                padding-top: 1rem;
+                padding-left: var(--card-pad-x);
+                padding-top: var(--card-pad-y);
             }
 
             @media (hover: hover) {
@@ -1017,15 +1019,13 @@
         <div class="team-grid">
             <div class="team-member">
                 <a href="https://andreaguarracino.github.io/" target="_blank"><img class="photo-img" style="object-position: 50% 0;" src="images/team/Andrea_Guarracino_2022.jpg" alt="Andrea Guarracino"></a>
-                <h3><a href="https://andreaguarracino.github.io/" target="_blank">Andrea Guarracino</a></h3>
+                <h3><a href="https://andreaguarracino.github.io/" target="_blank" title="Personal website">Andrea Guarracino</a></h3>
                 <p class="role"><strong>Principal<span class="x">&times;</span>Investigator</strong></p>
-                <p class="role"><a href="https://andreaguarracino.github.io/" target="_blank">Personal website</a></p>
             </div>
             <div class="team-member">
                 <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank"><img class="photo-img" src="images/team/alejandro-ortigas-vasquez.jpg" alt="Alejandro Ortigas-Vasquez"></a>
-                <h3><a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank">Alejandro Ortigas-Vasquez</a></h3>
+                <h3><a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" title="Google Scholar">Alejandro Ortigas-Vasquez</a></h3>
                 <p class="role"><strong>Postdoc<span class="x">&times;</span>Fellow</strong></p>
-                <p class="role"><a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank">Google Scholar</a></p>
             </div>
         </div>
     </section>
