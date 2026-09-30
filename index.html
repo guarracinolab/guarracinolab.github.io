@@ -459,6 +459,72 @@
             border-radius: 0.25rem;
         }
 
+        /* Hover ring: solid on team and publications, dashed on software (two links) */
+        .team-member,
+        .pub {
+            box-shadow: inset 0 0 0 2px transparent;
+            transition: box-shadow 0.2s;
+        }
+
+        .software-entry {
+            position: relative;
+        }
+
+        .software-entry::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 2px dashed transparent;
+            border-radius: 0.25rem;
+            pointer-events: none;
+            transition: border-color 0.2s;
+        }
+
+        /* Whole card acts as a link: publications and team */
+        .pub,
+        .team-member {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pub-title a::after,
+        .team-member h3 a::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+
+        .pub-links a {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pub.first-author { --ring: var(--accent); }
+        .pub.last-author { --ring: #b34e18; }
+
+        @media (hover: hover) {
+            .team-member:hover,
+            .pub:not(.first-author):not(.last-author):hover {
+                box-shadow: inset 0 0 0 2px var(--accent);
+            }
+
+            /* Solid ring completes the coloured left border */
+            .pub.first-author:hover,
+            .pub.last-author:hover {
+                box-shadow: inset 0 2px 0 0 var(--ring), inset -2px 0 0 0 var(--ring), inset 0 -2px 0 0 var(--ring);
+            }
+
+            .software-entry:hover::before {
+                border-color: var(--accent);
+            }
+
+            /* Solid ring while the pointer is on one of the two links */
+            .software-entry:has(.sw-name a:hover)::before,
+            .software-entry:has(.sw-links a:hover)::before {
+                border-style: solid;
+            }
+        }
+
         .team-member .photo {
             width: 8.75rem;
             height: 8.75rem;
@@ -811,6 +877,12 @@
                 padding-top: 1rem;
             }
 
+            @media (hover: hover) {
+                .pub.first-author:hover {
+                    box-shadow: inset 2px 0 0 0 var(--ring), inset -2px 0 0 0 var(--ring), inset 0 -2px 0 0 var(--ring);
+                }
+            }
+
             .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -944,8 +1016,8 @@
         <p class="new-lab-note">The lab opened in January 2026. We are actively building the team.</p>
         <div class="team-grid">
             <div class="team-member">
-                <a href="https://www.tgen.org/faculty-profiles/andrea-guarracino-ph-d/" target="_blank"><img class="photo-img" style="object-position: 50% 0;" src="images/team/Andrea_Guarracino_2022.jpg" alt="Andrea Guarracino"></a>
-                <h3><a href="https://www.tgen.org/faculty-profiles/andrea-guarracino-ph-d/" target="_blank">Andrea Guarracino</a></h3>
+                <a href="https://andreaguarracino.github.io/" target="_blank"><img class="photo-img" style="object-position: 50% 0;" src="images/team/Andrea_Guarracino_2022.jpg" alt="Andrea Guarracino"></a>
+                <h3><a href="https://andreaguarracino.github.io/" target="_blank">Andrea Guarracino</a></h3>
                 <p class="role"><strong>Principal<span class="x">&times;</span>Investigator</strong></p>
                 <p class="role"><a href="https://andreaguarracino.github.io/" target="_blank">Personal website</a></p>
             </div>

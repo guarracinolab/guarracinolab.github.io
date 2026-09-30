@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900">
 <title>Coming soon, unless on hiatus</title>
 <rect width="1600" height="900" fill="#fff"/>
-<g text-anchor="middle" font-size="240" fill="#2d5a4a" letter-spacing="6">
-<text x="804" y="302">COMING</text>
-<text x="800" y="462" font-size="200" fill="#af303e">&#215;</text>
-<text x="808" y="649"><tspan fill="none">*</tspan>SOON<tspan fill="#af303e">*</tspan></text>
+<g text-anchor="middle" font-size="170" fill="#2d5a4a" letter-spacing="4">
+<text x="803" y="326">COMING</text>
+<text x="800" y="444" font-size="142" fill="#af303e">&#215;</text>
+<text x="805" y="583"><tspan fill="none">*</tspan>SOON<tspan fill="#af303e">*</tspan></text>
 </g>
 <text x="800" y="830" text-anchor="middle" font-size="72" fill="#af303e">* <tspan fill="#5a5a5a">unless on hiatus</tspan></text>
 </svg>
