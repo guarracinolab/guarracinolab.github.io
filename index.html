@@ -231,6 +231,32 @@
             padding: 1rem 1.5rem;
             background: var(--bg);
             border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        @media (min-width: 48.0625rem) {
+            .research-area:nth-child(even):has(img) {
+                flex-direction: row-reverse;
+                border-left: none;
+                border-right: 3px solid var(--accent);
+            }
+        }
+
+        .research-area img {
+            flex: 0 0 38%;
+            width: 38%;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+        }
+
+        .research-area .text {
+            flex: 1;
+            min-width: 0;
         }
 
         .research-area h3 {
@@ -710,13 +736,22 @@
                 max-width: 100%;
             }
 
-            .research-area {
+            .research-area,
+            .research-area:nth-child(even) {
+                flex-direction: column;
+                gap: 1rem;
                 padding: 1rem;
                 text-align: center;
                 border-left: none;
+                border-right: none;
                 border-top: 3px solid var(--accent);
                 min-width: 0;
                 max-width: 100%;
+            }
+
+            .research-area img {
+                flex: none;
+                width: 100%;
             }
 
             section h2,
@@ -836,20 +871,29 @@
         <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>assembly</strong> free of single-reference bias, through <strong>pangenome<span class="x">&times;</span>compression</strong> into unified queryable graphs, to <strong>pangenome<span class="x">&times;</span>association</strong> powered by graph-based genotyping. We apply all of it to <strong>cancer<span class="x">&times;</span>pangenomics</strong> and <strong>complex<span class="x">&times;</span>diseases</strong>.</p>
         <div class="research-areas">
             <div class="research-area">
-                <h3>Pangenome<span class="x">&times;</span>Assembly</h3>
-                <p>We reduce the cost and complexity of germline genome assembly, making personalized pangenomics practical for clinical and research applications. This includes developing and benchmarking assembly approaches across sequencing platforms.</p>
+                <img src="images/telomere-repeats.svg" alt="Hidden telomere repeats and how we read them">
+                <div class="text">
+                    <h3>Pangenome<span class="x">&times;</span>Fragility</h3>
+                    <p>We study hidden telomere repeats inside chromosomes, weak spots where DNA can break, and how they change in glioblastoma. Using long-read sequencing of tumor and blood DNA and the human pangenome as reference, we separate true tumor changes from normal variation.</p>
+                </div>
             </div>
             <div class="research-area">
-                <h3>Pangenome<span class="x">&times;</span>Compression</h3>
-                <p>We develop algorithms and data structures for compressing pangenome alignments and graphs. Using techniques like tracepoints and implicit representations, we enable storage and querying of population-scale genomic data without sacrificing base-level resolution.</p>
+                <div class="text">
+                    <h3>Pangenome<span class="x">&times;</span>Compression</h3>
+                    <p>We develop algorithms and data structures for compressing pangenome alignments and graphs. Using techniques like tracepoints and implicit representations, we enable storage and querying of population-scale genomic data without sacrificing base-level resolution.</p>
+                </div>
             </div>
             <div class="research-area">
-                <h3>Pangenome<span class="x">&times;</span>Association</h3>
-                <p>We leverage pangenomes for genome-wide association studies, enabling discovery of trait associations with structural variants and sequences absent from linear reference genomes. Our methods use pangenome graph features as genetic markers rather than variants called against a reference.</p>
+                <div class="text">
+                    <h3>Pangenome<span class="x">&times;</span>Association</h3>
+                    <p>We leverage pangenomes for genome-wide association studies, enabling discovery of trait associations with structural variants and sequences absent from linear reference genomes. Our methods use pangenome graph features as genetic markers rather than variants called against a reference.</p>
+                </div>
             </div>
             <div class="research-area">
-                <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
-                <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single reference-based approaches miss.</p>
+                <div class="text">
+                    <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
+                    <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single reference-based approaches miss.</p>
+                </div>
             </div>
         </div>
     </section>
