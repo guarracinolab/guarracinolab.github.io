@@ -215,6 +215,8 @@
         .research-overview {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
+            text-align: justify;
+            hyphens: auto;
         }
 
         .research-overview strong {
@@ -237,6 +239,11 @@
         }
 
         @media (min-width: 48.0625rem) {
+            .research-area p {
+                text-align: justify;
+                hyphens: auto;
+            }
+
             .research-area:nth-child(even):has(img) {
                 flex-direction: row-reverse;
                 border-left: none;
@@ -868,26 +875,26 @@
 
     <section id="research" class="section-alt">
         <h2>Research</h2>
-        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>assembly</strong> free of single-reference bias, through <strong>pangenome<span class="x">&times;</span>compression</strong> into unified queryable graphs, to <strong>pangenome<span class="x">&times;</span>association</strong> powered by graph-based genotyping. We apply all of it to <strong>cancer<span class="x">&times;</span>pangenomics</strong> and <strong>complex<span class="x">&times;</span>diseases</strong>.</p>
+        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>compression</strong> into queryable graphs to <strong>pangenome<span class="x">&times;</span>association</strong> with graph-based genotyping. We apply it to <strong>pangenome<span class="x">&times;</span>fragility</strong> and <strong>cancer<span class="x">&times;</span>pangenomics</strong>, toward cancer and complex disease.</p>
         <div class="research-areas">
-            <div class="research-area">
-                <img src="images/pangenome-x-fragility.svg" alt="Hidden telomere repeats and how we read them">
-                <div class="text">
-                    <h3>Pangenome<span class="x">&times;</span>Fragility</h3>
-                    <p>We study hidden telomere repeats inside chromosomes, weak spots where DNA can break, and how they change in glioblastoma. By reading each DNA molecule on its own, we aim to find markers of the most unstable tumors and track how they evolve.</p>
-                </div>
-            </div>
             <div class="research-area">
                 <img src="images/pangenome-x-compression.svg" alt="CIGAR alignment path with error-bounded and diagonal-band tracepoints">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Compression</h3>
-                    <p>We develop algorithms and data structures for compressing pangenome alignments and graphs. Using techniques like tracepoints and implicit representations, we enable storage and querying of population-scale genomic data without sacrificing base-level resolution.</p>
+                    <p>We develop algorithms and data structures to compress pangenome alignments and graphs. With tracepoints and implicit representations, we store and query population-scale data without losing base-level resolution.</p>
                 </div>
             </div>
             <div class="research-area">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Association</h3>
-                    <p>We leverage pangenomes for genome-wide association studies, enabling discovery of trait associations with structural variants and sequences absent from linear references. Our methods use graph features as genetic markers rather than variants called against a reference.</p>
+                    <p>We leverage pangenomes for genome-wide association studies, finding trait associations with structural variants absent from linear references. Our methods use graph features, not variant calls, as genetic markers.</p>
+                </div>
+            </div>
+            <div class="research-area">
+                <img src="images/pangenome-x-fragility.svg" alt="Hidden telomere repeats and how we read them">
+                <div class="text">
+                    <h3>Pangenome<span class="x">&times;</span>Fragility</h3>
+                    <p>We study hidden telomere repeats, weak spots where DNA can break, and how they change in glioblastoma. Reading each DNA molecule on its own, we aim to find markers of unstable tumors and track their evolution.</p>
                 </div>
             </div>
             <div class="research-area">
