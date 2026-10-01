@@ -154,12 +154,23 @@
 
         .hero h1 {
             font-family: var(--display);
-            font-size: 3rem;
+            font-size: min(4.6rem, calc((100vw - 4rem) / 10.4));
             font-weight: 400;
             letter-spacing: -0.02em;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.02;
             margin-bottom: 0.875rem;
+        }
+
+        .hero h1 span {
+            display: block;
+            text-align: left;
+        }
+
+        .hero h1 .l {
+            display: block;
+            text-align: right;
+            color: var(--text);
         }
 
         .hero h1 span {
@@ -169,27 +180,7 @@
         .hero .tagline {
             font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 37.5rem;
-        }
-
-        .hero .tagline .hl {
-            color: var(--accent);
-        }
-
-        .hero .affiliation {
-            margin-top: 1rem;
-            font-family: var(--mono);
-            font-size: 0.95rem;
-            letter-spacing: 0.01em;
-            color: var(--text-muted);
-        }
-
-        .hero .affiliation a {
-            color: var(--text-muted);
-        }
-
-        .hero .affiliation a:hover {
-            color: var(--accent);
+            text-align: center;
         }
 
         /* Sections */
@@ -274,6 +265,7 @@
 
         .research-area h3 {
             font-family: var(--display);
+            text-align: center;
             font-size: 1.1em;
             font-weight: 400;
             text-transform: uppercase;
@@ -851,14 +843,6 @@
                 max-width: none;
             }
 
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .hero .affiliation {
-                font-size: 0.85rem;
-            }
-
             section {
                 padding: 1rem 1.25rem;
                 overflow-wrap: break-word;
@@ -1018,11 +1002,8 @@
 
     <main>
     <header class="hero">
-        <h1><span>Translational</span><br> Pangenomics</h1>
-        <p class="tagline">We develop methods to build and analyze pangenomes, to study genome variation, <span class="hl">cancer</span>, and complex <span class="hl">disease</span>.</p>
-        <p class="affiliation">
-            <a href="https://www.tgen.org/" target="_blank">Translational Genomics Research Institute</a> · Phoenix, AZ
-        </p>
+        <h1><span>Translational</span><span class="l">Pangenomics</span></h1>
+        <p class="tagline">We build and analyze pangenomes to study genome variation, cancer, and complex disease.</p>
     </header>
 
     <section id="research" class="section-alt">
