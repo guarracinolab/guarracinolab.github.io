@@ -357,15 +357,24 @@
             display: none;
         }
 
+        .pub-more summary span {
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
         .pub-more summary:hover {
             border-style: solid;
+        }
+
+        .pub-more summary:hover span {
+            border-bottom-color: var(--accent);
         }
 
         .pub-more[open] summary {
             margin-bottom: 0.5rem;
         }
 
-        .pub-more[open] summary::after {
+        .pub-more[open] summary span::after {
             content: " (hide)";
         }
 
@@ -408,7 +417,7 @@
 
         /* Hover or focus: show the full title */
         .pub:hover .pub-title,
-        .pub:focus-within .pub-title {
+        .pub:has(:focus-visible) .pub-title {
             white-space: normal;
             overflow: visible;
         }
@@ -430,7 +439,7 @@
         }
 
         .pub:hover .pub-details,
-        .pub:focus-within .pub-details {
+        .pub:has(:focus-visible) .pub-details {
             grid-template-rows: 1fr;
         }
 
@@ -597,6 +606,67 @@
         .pub-links a {
             position: relative;
             z-index: 1;
+        }
+
+        /* Desktop: publications as tiles. A hovered tile grows downward and pushes the rows below it. */
+        @media (min-width: 48.0625rem) {
+            .pub-list,
+            .pub-more-list {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-auto-rows: 8.5rem;
+                align-items: start;
+            }
+
+            .pub-more {
+                grid-column: 1 / -1;
+            }
+
+            .pub {
+                height: 8.5rem;
+                display: flex;
+                flex-direction: column;
+                transition: box-shadow 0.2s;
+            }
+
+            /* Hovered tile grows over the rows below; the grid rows stay fixed, so nothing moves. */
+            .pub:hover,
+            .pub:has(:focus-visible) {
+                height: auto;
+                min-height: 8.5rem;
+                position: relative;
+                z-index: 5;
+                filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.16));
+            }
+
+            .pub-details-inner {
+                padding-top: 0.5rem;
+            }
+
+            .pub-head {
+                flex: 1;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.6rem;
+            }
+
+            .pub-title {
+                white-space: normal;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+
+            .pub:hover .pub-title,
+            .pub:has(:focus-visible) .pub-title {
+                display: block;
+                overflow: visible;
+            }
+
+            .pub-badges {
+                margin-left: 0;
+                margin-top: auto;
+            }
         }
 
         .pub.first-author { --ring: var(--accent); }
@@ -1306,7 +1376,7 @@
                 </div>
             </div>
             <details class="pub-more">
-                <summary>Show all publications</summary>
+                <summary><span>Show all publications</span></summary>
                 <div class="pub-more-list">
                 <div class="pub">
                     <div class="pub-head">
