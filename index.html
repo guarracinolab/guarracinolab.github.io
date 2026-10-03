@@ -257,6 +257,14 @@
             color: var(--text);
         }
 
+        /* Section descriptions: justified at every width */
+        .research-overview,
+        .research-area p,
+        .new-lab-note {
+            text-align: justify;
+            hyphens: auto;
+        }
+
         .research-areas {
             display: grid;
             gap: 0.5rem;
@@ -1114,13 +1122,11 @@
                 }
             }
 
-            /* Short texts: justified, last line centred */
+            /* Phones: last line centred */
             .research-overview,
             .research-area p,
             .new-lab-note {
-                text-align: justify;
                 text-align-last: center;
-                hyphens: auto;
             }
 
             /* Topic names wrap only after the x, never mid-word */
