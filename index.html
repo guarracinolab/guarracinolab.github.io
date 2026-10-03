@@ -706,6 +706,18 @@
             background: rgba(45, 90, 74, 0.1);
             padding: 0.1em 0.3em;
             border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        /* Author names never break across lines */
+        .pub-authors .nw {
+            white-space: nowrap;
+        }
+
+        /* Last-author papers: highlight in the orange of their border */
+        .pub.last-author .highlight {
+            color: #a1440f;
+            background: rgba(179, 78, 24, 0.1);
         }
 
         .pub.first-author {
@@ -725,6 +737,22 @@
             vertical-align: middle;
             margin-left: auto;
             flex: none;
+        }
+
+        /* Badges show only when the card is open: hover, focus, or tap */
+        .pub .pub-badges {
+            display: none;
+        }
+
+        .pub:has(:focus-visible) .pub-badges,
+        .pub.open .pub-badges {
+            display: inline-flex;
+        }
+
+        @media (hover: hover) {
+            .pub:hover .pub-badges {
+                display: inline-flex;
+            }
         }
 
         .software-badge, .preprint-badge {
@@ -860,12 +888,12 @@
             .pub-list,
             .pub-more-list {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
-                grid-auto-rows: 8.5rem;
+                grid-auto-rows: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
                 align-items: start;
             }
 
             .pub {
-                height: 8.5rem;
+                height: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
                 display: flex;
                 flex-direction: column;
                 transition: box-shadow 0.2s;
@@ -875,7 +903,7 @@
             .pub:hover,
             .pub:has(:focus-visible) {
                 height: auto;
-                min-height: 8.5rem;
+                min-height: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
                 position: relative;
                 z-index: 5;
                 filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.16));
@@ -1371,7 +1399,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors"><span class="highlight">Guarracino A</span>, Gyamfi A, Human Pangenome Reference Consortium, Garrison E</div>
+                        <div class="pub-authors"><span class="highlight">Guarracino A</span>, Gyamfi&nbsp;A, Human Pangenome Reference Consortium, Garrison&nbsp;E</div>
                         <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.10.737660" target="_blank">DOI</a></span></div>
                     </div>
                 </div>
@@ -1383,7 +1411,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">Kaushan H, Marco-Sola S, Garrison E, Prins P, <span class="highlight">Guarracino A</span></div>
+                        <div class="pub-authors">Kaushan&nbsp;H, <span class="nw">Marco-Sola&nbsp;S</span>, Garrison&nbsp;E, Prins&nbsp;P, <span class="highlight">Guarracino A</span></div>
                         <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank">DOI</a></span></div>
                     </div>
                 </div>
@@ -1395,7 +1423,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">Bolognini D*, <span class="highlight">Guarracino A</span>*, Paleni C, Dudley TS, Iacoviello L, Raveane A, Sudmant PH, Garrison E, Soranzo N</div>
+                        <div class="pub-authors">Bolognini&nbsp;D*, <span class="highlight">Guarracino A</span>*, Paleni&nbsp;C, Dudley&nbsp;TS, Iacoviello&nbsp;L, Raveane&nbsp;A, Sudmant&nbsp;PH, Garrison&nbsp;E, Soranzo&nbsp;N</div>
                         <div class="pub-meta"><span class="pub-venue">Genome Biology (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1186/s13059-026-04242-4" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42711702/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1406,7 +1434,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">de Lima LG*, <span class="highlight">Guarracino A</span>*, Koren S*, ... Garrison E, Phillippy AM, Gerton JL</div>
+                        <div class="pub-authors">de&nbsp;Lima&nbsp;LG*, <span class="highlight">Guarracino A</span>*, Koren&nbsp;S*, ... Garrison&nbsp;E, Phillippy&nbsp;AM, Gerton&nbsp;JL</div>
                         <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40993387/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1418,7 +1446,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">Garrison E*, <span class="highlight">Guarracino A</span>*, Heumos S, Villani F, Bao Z, ... Prins P</div>
+                        <div class="pub-authors">Garrison&nbsp;E*, <span class="highlight">Guarracino A</span>*, Heumos&nbsp;S, Villani&nbsp;F, Bao&nbsp;Z, ... Prins&nbsp;P</div>
                         <div class="pub-meta"><span class="pub-venue">Nature Methods (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41592-024-02430-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39433878/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1430,7 +1458,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">Heumos S*, <span class="highlight">Guarracino A</span>*, Schmelzle JM, Li J, Zhang Z, ... Garrison E</div>
+                        <div class="pub-authors">Heumos&nbsp;S*, <span class="highlight">Guarracino A</span>*, Schmelzle&nbsp;JM, Li&nbsp;J, Zhang&nbsp;Z, ... Garrison&nbsp;E</div>
                         <div class="pub-meta"><span class="pub-venue">Bioinformatics (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btae363" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/38960860/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1441,7 +1469,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors"><span class="highlight">Guarracino A</span>, Buonaiuto S, de Lima LG, Potapova T, Rhie A, Koren S, ... Colonna V, Garrison E</div>
+                        <div class="pub-authors"><span class="highlight">Guarracino A</span>, Buonaiuto&nbsp;S, de&nbsp;Lima&nbsp;LG, Potapova&nbsp;T, Rhie&nbsp;A, Koren&nbsp;S, ... Colonna&nbsp;V, Garrison&nbsp;E</div>
                         <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05976-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165241/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1453,7 +1481,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors">Garrison E, <span class="highlight">Guarracino A</span></div>
+                        <div class="pub-authors">Garrison&nbsp;E, <span class="highlight">Guarracino A</span></div>
                         <div class="pub-meta"><span class="pub-venue">Bioinformatics (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac743" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36448683/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1465,7 +1493,7 @@
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
-                        <div class="pub-authors"><span class="highlight">Guarracino A</span>*, Heumos S*, Nahnsen S, Prins P, Garrison E</div>
+                        <div class="pub-authors"><span class="highlight">Guarracino A</span>*, Heumos&nbsp;S*, Nahnsen&nbsp;S, Prins&nbsp;P, Garrison&nbsp;E</div>
                         <div class="pub-meta"><span class="pub-venue">Bioinformatics (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac308" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/35552372/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
@@ -1481,7 +1509,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Lucas JK, Hebbar P, Liao WW, ... <span class="highlight">Guarracino A</span>, ... Phillippy AM, Wang T, Paten B</div>
+                            <div class="pub-authors">Lucas&nbsp;JK, Hebbar&nbsp;P, Liao&nbsp;WW, ... <span class="highlight">Guarracino A</span>, ... Phillippy&nbsp;AM, Wang&nbsp;T, Paten&nbsp;B</div>
                             <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.21.739710" target="_blank">DOI</a></span></div>
                         </div>
                     </div>
@@ -1492,7 +1520,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Hansen NF, Dwarshuis N, Ji HJ, Rhie A, Loucks H, ... <span class="highlight">Guarracino A</span>, ... Koren S, Zook JM, Phillippy AM</div>
+                            <div class="pub-authors">Hansen&nbsp;NF, Dwarshuis&nbsp;N, Ji&nbsp;HJ, Rhie&nbsp;A, Loucks&nbsp;H, ... <span class="highlight">Guarracino A</span>, ... Koren&nbsp;S, Zook&nbsp;JM, Phillippy&nbsp;AM</div>
                             <div class="pub-meta"><span class="pub-venue">Cell (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1016/j.cell.2026.06.016" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42561913/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1504,7 +1532,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Wagner J, Keskus AG, Oshima KK, ... <span class="highlight">Guarracino A</span>, ... Logsdon GA, Kolmogorov M, Zook JM</div>
+                            <div class="pub-authors">Wagner&nbsp;J, Keskus&nbsp;AG, Oshima&nbsp;KK, ... <span class="highlight">Guarracino A</span>, ... Logsdon&nbsp;GA, Kolmogorov&nbsp;M, Zook&nbsp;JM</div>
                             <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.05.01.722316" target="_blank">DOI</a></span></div>
                         </div>
                     </div>
@@ -1515,7 +1543,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Edwards SV, Fang B, Khost D, Kolyfetis GE, Cheek RG, ... Garrison E, <span class="highlight">Guarracino A</span>, Li H, Sackton TB</div>
+                            <div class="pub-authors">Edwards&nbsp;SV, Fang&nbsp;B, Khost&nbsp;D, Kolyfetis&nbsp;GE, Cheek&nbsp;RG, ... Garrison&nbsp;E, <span class="highlight">Guarracino A</span>, Li&nbsp;H, Sackton&nbsp;TB</div>
                             <div class="pub-meta"><span class="pub-venue">Science (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1126/science.adw1931" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/41379974/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1526,7 +1554,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Yoo D, Rhie A, Hebbar P, ... <span class="highlight">Guarracino A</span>, ... Makova KD, Phillippy AM, Eichler EE</div>
+                            <div class="pub-authors">Yoo&nbsp;D, Rhie&nbsp;A, Hebbar&nbsp;P, ... <span class="highlight">Guarracino A</span>, ... Makova&nbsp;KD, Phillippy&nbsp;AM, Eichler&nbsp;EE</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08816-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40205052/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1537,7 +1565,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Porubsky D, Dashnow H, Sasani TA, ... <span class="highlight">Guarracino A</span>, ... Eberle MA, Eichler EE</div>
+                            <div class="pub-authors">Porubsky&nbsp;D, Dashnow&nbsp;H, Sasani&nbsp;TA, ... <span class="highlight">Guarracino A</span>, ... Eberle&nbsp;MA, Eichler&nbsp;EE</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08922-2" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40269156/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1548,7 +1576,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Villani F, <span class="highlight">Guarracino A</span>, Ward RR, Green T, Emms M, ... Williams RW, Chen H, Colonna V</div>
+                            <div class="pub-authors">Villani&nbsp;F, <span class="highlight">Guarracino A</span>, Ward&nbsp;RR, Green&nbsp;T, Emms&nbsp;M, ... Williams&nbsp;RW, Chen&nbsp;H, Colonna&nbsp;V</div>
                             <div class="pub-meta"><span class="pub-venue">iScience (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1016/j.isci.2025.111835" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40034122/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1559,7 +1587,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Cheng L, Wang N, Bao Z, Zhou Q, <span class="highlight">Guarracino A</span>, ... Garrison E, Stein N, Städler T, Zhou Y, Huang S</div>
+                            <div class="pub-authors">Cheng&nbsp;L, Wang&nbsp;N, Bao&nbsp;Z, Zhou&nbsp;Q, <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Stein&nbsp;N, Städler&nbsp;T, Zhou&nbsp;Y, Huang&nbsp;S</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-08476-9" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39843749/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1570,7 +1598,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Bolognini D, Halgren A, Lou RN, Raveane A, Rocha JL, <span class="highlight">Guarracino A</span>, ... Garrison E, Sudmant PH</div>
+                            <div class="pub-authors">Bolognini&nbsp;D, Halgren&nbsp;A, Lou&nbsp;RN, Raveane&nbsp;A, Rocha&nbsp;JL, <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Sudmant&nbsp;PH</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-07911-1" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39232174/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1581,7 +1609,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Liao WW, Asri M, Ebler J, ... <span class="highlight">Guarracino A</span>, ... Garrison E, Marschall T, Hall IM, Li H, Paten B</div>
+                            <div class="pub-authors">Liao&nbsp;WW, Asri&nbsp;M, Ebler&nbsp;J, ... <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Marschall&nbsp;T, Hall&nbsp;IM, Li&nbsp;H, Paten&nbsp;B</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165242/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1592,7 +1620,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Rhie A, Nurk S, Cechova M, ... <span class="highlight">Guarracino A</span>, ... Miga KH, Makova KD, Phillippy AM</div>
+                            <div class="pub-authors">Rhie&nbsp;A, Nurk&nbsp;S, Cechova&nbsp;M, ... <span class="highlight">Guarracino A</span>, ... Miga&nbsp;KH, Makova&nbsp;KD, Phillippy&nbsp;AM</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37612512/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
@@ -1603,7 +1631,7 @@
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
-                            <div class="pub-authors">Jarvis ED, Formenti G, Rhie A, <span class="highlight">Guarracino A</span>, Yang C, ... Paten B, Howe K, Miga KH</div>
+                            <div class="pub-authors">Jarvis&nbsp;ED, Formenti&nbsp;G, Rhie&nbsp;A, <span class="highlight">Guarracino A</span>, Yang&nbsp;C, ... Paten&nbsp;B, Howe&nbsp;K, Miga&nbsp;KH</div>
                             <div class="pub-meta"><span class="pub-venue">Nature (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-022-05325-5" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36261518/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
