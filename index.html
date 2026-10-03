@@ -290,7 +290,8 @@
             transition: border-color 0.2s;
         }
 
-        @media (min-width: 48.0625rem) {
+        /* Research cards: figure beside text from 601px (tablets included) */
+        @media (min-width: 37.5625rem) {
             .research-area p {
                 hyphens: auto;
             }
@@ -1089,23 +1090,28 @@
                 max-width: 100%;
             }
 
-            .research-area,
-            .research-area:nth-child(even) {
-                flex-direction: column;
-                flex-wrap: nowrap;
-                gap: 0.875rem;
-                padding: var(--card-pad-y) var(--card-pad-x);
-                text-align: center;
-                --bar-l: transparent;
-                --bar-r: transparent;
-                --bar-t: var(--accent);
-                min-width: 0;
-                max-width: 100%;
-            }
+            /* Phones: figure above text, accent bar on top */
+            @media (max-width: 37.5rem) {
+                .research-area,
+                .research-area:nth-child(even) {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    gap: 0.875rem;
+                    text-align: center;
+                    --bar-l: transparent;
+                    --bar-r: transparent;
+                    --bar-t: var(--accent);
+                }
 
-            .research-area img {
-                flex: none;
-                width: 100%;
+                .research-area img {
+                    flex: none;
+                    width: 100%;
+                }
+
+                .research-more {
+                    flex-basis: auto;
+                    width: 100%;
+                }
             }
 
             /* Short texts: justified, last line centred */
@@ -1124,11 +1130,6 @@
 
             .research-overview strong {
                 hyphens: manual;
-            }
-
-            .research-more {
-                flex-basis: auto;
-                width: 100%;
             }
 
             section h2,
