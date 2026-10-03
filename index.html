@@ -922,124 +922,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Join */
-        .join-section {
-            padding: 1.5rem 0;
-            margin: 0;
-            max-width: none;
-        }
-
-        .join-inner {
-            max-width: 56.25rem;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .position {
-            background: var(--bg-alt);
-            padding: 1.5rem;
-            border-radius: 0.25rem;
-            margin-top: 1rem;
-        }
-
-        .position h3 {
-            font-family: var(--display);
-            font-size: 1.2em;
-            font-weight: 400;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .position .meta {
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .position p {
-            margin-bottom: 0.75rem;
-        }
-
-        .position ul {
-            margin-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .position li {
-            margin-bottom: 0.25rem;
-        }
-
-        .position details {
-            margin-bottom: 0.75rem;
-            border-top: 1px solid var(--border);
-            padding-top: 0.75rem;
-        }
-
-        .position summary {
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent);
-            cursor: pointer;
-            padding: 0.25rem 0;
-            list-style: none;
-        }
-
-        .position summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .position summary::before {
-            content: '▸ ';
-            font-size: 1.35em;
-            line-height: 0;
-            vertical-align: baseline;
-            position: relative;
-            top: -0.05em;
-        }
-
-        .position details[open] summary::before {
-            content: '▾ ';
-            font-size: 1.35em;
-            line-height: 0;
-            vertical-align: baseline;
-            position: relative;
-            top: -0.05em;
-        }
-
-        .position details[open] summary {
-            margin-bottom: 0.5rem;
-        }
-
-        .position details h4 {
-            font-family: var(--sans);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin: 0.5rem 0 0.25rem;
-        }
-
-        .btn {
-            display: inline-block;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: var(--accent-light);
-            border-color: transparent;
-            color: white;
-        }
-
         /* Contact */
         .contact-info {
             display: grid;
@@ -1275,22 +1157,9 @@
                 content: "\200B";
             }
 
-            .position {
-                padding: 1.25rem;
-                text-align: center;
-            }
-
-            .position details {
-                text-align: left;
-            }
-
             .contact-info {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-            }
-
-            .join-inner {
-                padding: 0 1.25rem;
             }
 
             footer {
@@ -1326,7 +1195,6 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#software">Our<span class="x">&times;</span>Software</a></li>
                 <li><a href="#team">Team</a></li>
-                <!-- <li><a href="#join">Join<span class="x">&times;</span>Us</a></li> -->
                 <li><a href="#publications">Selected<span class="x">&times;</span>Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1421,77 +1289,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section id="join" class="join-section">
-        <div class="join-inner">
-            <h2>Join<span class="x">&times;</span>Us</h2>
-
-            <div class="position">
-                <h3>Postdoctoral Fellow</h3>
-                <div class="meta">Full-time · Phoenix, AZ</div>
-                <p>Develop computational methods for cancer pangenomics. Access to in-house PacBio Revio and ONT PromethION platforms. Collaborate with T2T and HPRC consortia. <a href="https://en.wikipedia.org/wiki/Solo_Leveling" target="_blank">Pursue your own research ideas</a>.</p>
-
-                <details>
-                    <summary>Responsibilities</summary>
-                    <ul>
-                        <li>Developing computational tools for analyzing and visualizing long-read sequencing data and genome assemblies in normal and tumor samples</li>
-                        <li>Constructing personalized pangenomes to characterize somatic structural variation</li>
-                        <li>Contributing to pangenome-based variant calling and association study pipelines</li>
-                        <li>Working with large-scale genomic, epigenomic, and transcriptomic data</li>
-                        <li>Contributing to genome assembly and comparative genomics analyses</li>
-                        <li>Collaborating with internal and external partners, including consortium colleagues (e.g., Telomere-to-Telomere Consortium, Human Pangenome Reference Consortium)</li>
-                        <li>Building and maintaining reproducible workflows (e.g., Snakemake, Nextflow)</li>
-                        <li>Presenting research internally and externally (e.g., conferences)</li>
-                    </ul>
-                </details>
-
-                <details>
-                    <summary>Requirements</summary>
-                    <h4>Required</h4>
-                    <ul>
-                        <li>PhD in Bioinformatics, Computer Science, Computational Biology, or related field</li>
-                        <li>Experience analyzing DNA sequencing data</li>
-                        <li>Proficiency in Python and/or R</li>
-                        <li>Familiarity with Linux/Unix and HPC systems (SLURM)</li>
-                        <li>Experience with version control (Git/GitHub)</li>
-                        <li>Understanding of statistics for genomic analysis</li>
-                    </ul>
-                    <h4>Preferred</h4>
-                    <ul>
-                        <li>Long-read sequencing analysis experience</li>
-                        <li>Proficiency in a compiled language (C, C++, Rust)</li>
-                        <li>Track record of software development (include a link to the software project you are most proud of)</li>
-                        <li>Familiarity with genome assembly, structural variant calling, or pangenome methods</li>
-                        <li>Experience with workflow managers</li>
-                        <li>Knowledge of cancer genomics databases (TCGA, ICGC)</li>
-                        <li>Experience with GWAS or variant-phenotype association analysis</li>
-                        <li>Familiarity with controlled-access genomic databases (e.g., dbGaP)</li>
-                    </ul>
-                </details>
-
-                <details>
-                    <summary>Location</summary>
-                    <p>The Guarracino Lab is located at the Translational Genomics Research Institute, a non-profit research institute in Phoenix, Arizona. Phoenix is the 5th largest city in the nation, ranked 5th as an Emerging Life Science Market, with over $3.25 billion in recent capital investment in biosciences. TGen sits at the center of the Phoenix Biomedical Campus, a 30-acre urban life sciences hub. Phoenix offers over 300 sunny days a year, multiple mountain ranges nearby, and access to some of the nation's most stunning national and state parks. The airport is a 10-minute drive from TGen with consistently high passenger satisfaction ratings.</p>
-                    <p>This position offers flexibility: hybrid arrangements with on-site time at TGen in Phoenix are possible for the right candidate.</p>
-                </details>
-
-                <details>
-                    <summary>Benefits</summary>
-                    <ul>
-                        <li>BC/BS of Arizona health coverage</li>
-                        <li>Dental, Vision, Life, Short and Long Term Disability</li>
-                        <li>401k with 6% match</li>
-                        <li>Generous time off</li>
-                        <li>Commuter benefits</li>
-                        <li>Employee Assistance Program</li>
-                    </ul>
-                </details>
-
-                <p style="border-top: 1px solid var(--border); padding-top: 0.75rem;">Submit a cover letter describing your research interests and motivation for joining the group, along with a CV detailing your research experience, publications, conference presentations, and contact information for at least two references.</p>
-                <a href="mailto:aguarracino@tgen.org?subject=Postdoctoral%20position%20application" class="btn">APPLY</a>
-            </div>
-        </div>
-    </section> -->
 
     <section id="publications" class="section-alt">
         <h2>Selected<span class="x">&times;</span>Publications</h2>
