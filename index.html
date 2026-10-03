@@ -640,9 +640,14 @@
                 display: none;
             }
 
+            /* Touch: badges and toggle follow the title (left on tablets, centred on phones) */
             .pub-head {
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
+            }
+
+            .pub-head .pub-badges {
+                margin-left: 0;
             }
 
             .pub-title {
@@ -1165,7 +1170,8 @@
                 text-align: center;
             }
 
-            .pub-meta {
+            .pub-meta,
+            .pub-head {
                 justify-content: center;
             }
 
