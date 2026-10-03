@@ -17,11 +17,45 @@
     <meta name="twitter:site" content="@AndresGuarahino">
     <link rel="icon" href="images/g.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
+        /* Self-hosted fonts, latin subset (SIL OFL, see fonts/) */
+        @font-face {
+            font-family: 'Archivo Black';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/archivo-black-400.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/ibm-plex-mono-400.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(fonts/ibm-plex-mono-600.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: swap;
+            src: url(fonts/ibm-plex-sans.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
         :root {
             --bg: #faf9f7;
             --bg-alt: #f0eeeb;
@@ -519,8 +553,7 @@
             text-overflow: ellipsis;
         }
 
-        /* Hover or focus: show the full title */
-        .pub:hover .pub-title,
+        /* Focus (or mouse hover, below): show the full title */
         .pub:has(:focus-visible) .pub-title {
             white-space: normal;
             overflow: visible;
@@ -545,15 +578,29 @@
         }
 
         /* Open card: room for the link tap margin below */
-        .pub:hover .pub-details-inner,
         .pub:has(:focus-visible) .pub-details-inner,
         .pub.open .pub-details-inner {
             padding-bottom: 5px;
         }
 
-        .pub:hover .pub-details,
         .pub:has(:focus-visible) .pub-details {
             grid-template-rows: 1fr;
+        }
+
+        /* Mouse only: a tap leaves :hover stuck on the last touched card */
+        @media (hover: hover) {
+            .pub:hover .pub-title {
+                white-space: normal;
+                overflow: visible;
+            }
+
+            .pub:hover .pub-details-inner {
+                padding-bottom: 5px;
+            }
+
+            .pub:hover .pub-details {
+                grid-template-rows: 1fr;
+            }
         }
 
         @media (hover: none) {
@@ -1283,7 +1330,7 @@
                 <p class="role"><strong>Principal<span class="x">&times;</span>Investigator</strong></p>
             </div>
             <div class="team-member">
-                <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank"><img class="photo-img" src="images/team/alejandro-ortigas-vasquez.jpg" width="450" height="450" alt="Alejandro Ortigas-Vasquez"></a>
+                <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank"><img class="photo-img" src="images/team/alejandro-ortigas-vasquez.jpg" width="300" height="300" alt="Alejandro Ortigas-Vasquez"></a>
                 <h3><a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" title="Google Scholar">Alejandro Ortigas-Vasquez</a></h3>
                 <p class="role"><strong>Postdoc<span class="x">&times;</span>Fellow</strong></p>
             </div>
@@ -1570,7 +1617,7 @@
     </main>
 
     <footer>
-        <a href="https://www.tgen.org/" target="_blank"><img src="images/partners/tgen.png" width="1500" height="551" loading="lazy" alt="TGen"></a>
+        <a href="https://www.tgen.org/" target="_blank"><img src="images/partners/tgen.png" width="686" height="252" loading="lazy" alt="TGen"></a>
         <a href="https://www.cityofhope.org/" target="_blank"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></a>
         <p><span id="year"></span> Guarracino<span class="x">&times;</span>Lab</p>
     </footer>
