@@ -651,7 +651,14 @@
                 justify-content: flex-start;
             }
 
+            /* Toggle keeps its place; badges open on the next line */
+            .pub-head .pub-toggle {
+                order: 1;
+            }
+
             .pub-head .pub-badges {
+                order: 2;
+                flex-basis: 100%;
                 margin-left: 0;
             }
 
@@ -1202,7 +1209,8 @@
             }
 
             .pub-meta,
-            .pub-head {
+            .pub-head,
+            .pub-head .pub-badges {
                 justify-content: center;
             }
 
