@@ -352,10 +352,6 @@
             flex-basis: 100%;
         }
 
-        .research-more .pub {
-            background: var(--bg-alt);
-        }
-
         /* Tiles share the full panel width */
         @media (min-width: 48.0625rem) and (hover: hover) {
             .research-more.pub-list {
@@ -538,7 +534,7 @@
         }
 
         .pub {
-            background: var(--bg);
+            background: var(--bg-alt);
             padding: var(--card-pad-y) var(--card-pad-x);
             border-radius: 0.25rem;
         }
@@ -1007,7 +1003,7 @@
             font-family: var(--mono);
             font-size: 0.8rem;
             color: var(--text-muted);
-            background: var(--bg-alt);
+            background: var(--bg);
         }
 
         footer img {
@@ -1365,7 +1361,7 @@
         </div>
     </section>
 
-    <section id="publications" class="section-alt">
+    <section id="publications">
         <h2>Selected<span class="x">&times;</span>Publications</h2>
         <div class="pub-list">
             <div class="pub first-author">
@@ -1619,7 +1615,7 @@
         </p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section-alt">
         <h2>Contact</h2>
         <div class="contact-info">
             <div class="contact-block">
