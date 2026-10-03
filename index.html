@@ -35,6 +35,7 @@
             --display: 'Archivo Black', sans-serif;
             --card-pad-y: 0.75rem;
             --card-pad-x: 1.25rem;
+            --line: 2px;
         }
 
         * {
@@ -230,7 +231,7 @@
         }
 
         .research-area {
-            border-left: 3px solid var(--accent);
+            border-left: var(--line) solid var(--accent);
             padding: var(--card-pad-y) var(--card-pad-x);
             background: var(--bg);
             border-radius: 0.25rem;
@@ -248,7 +249,7 @@
             .research-area:nth-child(even):has(img) {
                 flex-direction: row-reverse;
                 border-left: none;
-                border-right: 3px solid var(--accent);
+                border-right: var(--line) solid var(--accent);
             }
         }
 
@@ -358,7 +359,7 @@
             letter-spacing: 0.05em;
             color: var(--accent);
             padding: var(--card-pad-y) var(--card-pad-x);
-            border: 1px dashed var(--accent);
+            border: var(--line) dashed var(--accent);
             border-radius: 0.25rem;
         }
 
@@ -490,12 +491,12 @@
         }
 
         .pub.first-author {
-            border-left: 3px solid var(--accent);
+            border-left: var(--line) solid var(--accent);
             padding-left: var(--card-pad-x);
         }
 
         .pub.last-author {
-            border-left: 3px solid #b34e18;
+            border-left: var(--line) solid #b34e18;
             padding-left: var(--card-pad-x);
         }
 
@@ -585,7 +586,7 @@
         /* Hover ring: solid on team and publications, dashed on software (two links) */
         .team-member,
         .pub {
-            box-shadow: inset 0 0 0 2px transparent;
+            box-shadow: inset 0 0 0 var(--line) transparent;
             transition: box-shadow 0.2s;
         }
 
@@ -597,7 +598,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            border: 2px dashed transparent;
+            border: var(--line) dashed transparent;
             border-radius: 0.25rem;
             pointer-events: none;
             transition: border-color 0.2s;
@@ -686,13 +687,13 @@
         @media (hover: hover) {
             .team-member:hover,
             .pub:not(.first-author):not(.last-author):hover {
-                box-shadow: inset 0 0 0 2px var(--accent);
+                box-shadow: inset 0 0 0 var(--line) var(--accent);
             }
 
             /* Solid ring completes the coloured left border */
             .pub.first-author:hover,
             .pub.last-author:hover {
-                box-shadow: inset 0 2px 0 0 var(--ring), inset -2px 0 0 0 var(--ring), inset 0 -2px 0 0 var(--ring);
+                box-shadow: inset 0 var(--line) 0 0 var(--ring), inset calc(-1 * var(--line)) 0 0 0 var(--ring), inset 0 calc(-1 * var(--line)) 0 0 var(--ring);
             }
 
             .software-entry:hover::before {
@@ -991,7 +992,7 @@
                 text-align: center;
                 border-left: none;
                 border-right: none;
-                border-top: 3px solid var(--accent);
+                border-top: var(--line) solid var(--accent);
                 min-width: 0;
                 max-width: 100%;
             }
@@ -1055,7 +1056,7 @@
             .pub.first-author,
             .pub.last-author {
                 border-left: none;
-                border-top: 3px solid var(--ring);
+                border-top: var(--line) solid var(--ring);
                 padding-left: var(--card-pad-x);
                 padding-top: var(--card-pad-y);
             }
@@ -1063,7 +1064,7 @@
             @media (hover: hover) {
                 .pub.first-author:hover,
                 .pub.last-author:hover {
-                    box-shadow: inset 2px 0 0 0 var(--ring), inset -2px 0 0 0 var(--ring), inset 0 -2px 0 0 var(--ring);
+                    box-shadow: inset var(--line) 0 0 0 var(--ring), inset calc(-1 * var(--line)) 0 0 0 var(--ring), inset 0 calc(-1 * var(--line)) 0 0 var(--ring);
                 }
             }
 
