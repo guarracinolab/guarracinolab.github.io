@@ -1103,8 +1103,22 @@
                 width: 100%;
             }
 
-            .research-area p {
-                text-align: left;
+            /* Short texts: justified, last line centred */
+            .research-overview,
+            .research-area p,
+            .new-lab-note {
+                text-align: justify;
+                text-align-last: center;
+                hyphens: auto;
+            }
+
+            /* Topic names wrap only after the x, never mid-word */
+            .research-overview .x::after {
+                content: "\200B";
+            }
+
+            .research-overview strong {
+                hyphens: manual;
             }
 
             .research-more {
@@ -1115,6 +1129,11 @@
             section h2,
             .research-area h3 {
                 line-height: 1.2;
+            }
+
+            /* Longest card title fits one line from 360px */
+            .research-area h3 {
+                font-size: clamp(0.85rem, calc((100vw - 5rem) / 18.3), 1.1em);
             }
 
             /* Titles may wrap after the x, never in a word */
@@ -1155,10 +1174,6 @@
             }
 
             .pub-more + p {
-                text-align: center;
-            }
-
-            .new-lab-note {
                 text-align: center;
             }
 
@@ -1256,7 +1271,7 @@
 
     <section id="research" class="section-alt">
         <h2>Research</h2>
-        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>representation</strong>, with implicit alignments and graphs you can query, to <strong>pangenome<span class="x">&times;</span>association</strong>, with graph-based markers. We apply our tools to <strong>pangenome<span class="x">&times;</span>fragility</strong>, <strong>cancer<span class="x">&times;</span>pangenomics</strong>, and complex disease.</p>
+        <p class="research-overview">We work across the full pangenomics stack. With <strong>pangenome<span class="x">&times;</span>representation</strong> we build implicit, queryable alignments and graphs, and with <strong>pangenome<span class="x">&times;</span>association</strong> we use graph features as genetic markers. We apply them to <strong>pangenome<span class="x">&times;</span>fragility</strong> in the human genome, to <strong>cancer<span class="x">&times;</span>pangenomics</strong> in tumors, and to complex&nbsp;disease.</p>
         <div class="research-areas">
             <div class="research-area" data-refs="https://doi.org/10.64898/2026.02.16.706236 https://github.com/pangenome/impg">
                 <img src="images/research/pangenome-x-representation.svg" width="1152" height="648" loading="lazy" alt="CIGAR alignment path with error-bounded and diagonal-band tracepoints">
@@ -1283,7 +1298,7 @@
                 <img src="images/research/cancer-x-pangenomics.svg" width="1600" height="900" loading="lazy" alt="Tumor translocation breakpoint between chromosomes 19 and 22, inside pseudohomologous repeats">
                 <div class="text">
                     <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
-                    <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single-reference approaches miss.</p>
+                    <p>We build personalized pangenomes from tumor and matched normal samples with long-read sequencing and de novo assembly. They reveal somatic structural variants that a single reference misses.</p>
                 </div>
             </div>
         </div>
