@@ -11,9 +11,9 @@
 <rect x="1449.0" y="54.0" width="112" height="124" rx="24" fill="#d3dff4"/>
 <rect x="1427.5" y="434.0" width="145" height="124" rx="24" fill="#f1e2c7"/>
 <path d="M338,196 C372.75,196 372.75,261 407.5,261 L582.5,261 C608.75,261 608.75,96 635.0,96 L765.0,96 C786.25,96 786.25,261 807.5,261 L1002.5,261 C1021.25,261 1021.25,116 1040.0,116 L1190.0,116 C1212.5,116 1212.5,261 1235.0,261 L1395.0,261 C1422.0,261 1422.0,116 1449.0,116 L1561.0,116 L1585,116" fill="none" stroke="#6a8fd4" stroke-width="18" stroke-linecap="round"/>
-<text x="318" y="199" font-size="80" font-weight="700" fill="#6a8fd4" text-anchor="end" dominant-baseline="middle">chr21</text>
+<text x="318" y="199" font-size="80" font-weight="700" fill="#4a6fb8" text-anchor="end" dominant-baseline="middle">chr21</text>
 <path d="M338,416 C372.75,416 372.75,351 407.5,351 L582.5,351 C600.0,351 600.0,496 617.5,496 L782.5,496 C795.0,496 795.0,351 807.5,351 L1002.5,351 C1029.25,351 1029.25,516 1056.0,516 L1174.0,516 C1204.5,516 1204.5,351 1235.0,351 L1395.0,351 C1411.25,351 1411.25,516 1427.5,516 L1572.5,516 L1585,516" fill="none" stroke="#c49a5a" stroke-width="18" stroke-linecap="round"/>
-<text x="318" y="419" font-size="80" font-weight="700" fill="#c49a5a" text-anchor="end" dominant-baseline="middle">chr14</text>
+<text x="318" y="419" font-size="80" font-weight="700" fill="#916a2f" text-anchor="end" dominant-baseline="middle">chr14</text>
 <path d="M338,306 L407.5,306 L582.5,306 C608.75,306 608.75,136 635.0,136 L765.0,136 C786.25,136 786.25,306 807.5,306 L1002.5,306 C1029.25,306 1029.25,476 1056.0,476 L1174.0,476 C1204.5,476 1204.5,306 1235.0,306 L1395.0,306 C1411.25,306 1411.25,476 1427.5,476 L1572.5,476 L1585,476" fill="none" stroke="#222" stroke-width="18" stroke-linecap="round"/>
 <text x="318" y="309" font-size="80" font-weight="700" fill="#222" text-anchor="end" dominant-baseline="middle">sample</text>
 <path d="M968.5,272 L1036.5,340 M1036.5,272 L968.5,340" stroke="#d32f2f" stroke-width="15" stroke-linecap="round"/>
