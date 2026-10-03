@@ -9,8 +9,11 @@
     <meta property="og:description" content="We build and analyze pangenomes to study genome variation, cancer, and complex disease. Translational Genomics Research Institute, Phoenix, AZ.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://guarracinolab.github.io/">
-    <meta property="og:image" content="https://guarracinolab.github.io/images/GUARRACINOxLAB.png">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://guarracinolab.github.io/images/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Guarracino Lab logo">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AndresGuarahino">
     <link rel="icon" href="images/g.ico">
 
@@ -42,6 +45,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 4rem;
             overflow-x: clip;
         }
 
@@ -251,6 +255,7 @@
         .research-area img {
             flex: 0 0 38%;
             width: 38%;
+            height: auto;
             aspect-ratio: 16 / 9;
             object-fit: contain;
             background: #fff;
@@ -339,6 +344,10 @@
         }
 
         /* Publications */
+        .pub-more {
+            margin-top: 0.5rem;
+        }
+
         .pub-more summary {
             list-style: none;
             cursor: pointer;
@@ -374,8 +383,13 @@
             margin-bottom: 0.5rem;
         }
 
-        .pub-more[open] summary span::after {
-            content: " (hide)";
+        .pub-more summary .when-open,
+        .pub-more[open] summary .when-closed {
+            display: none;
+        }
+
+        .pub-more[open] summary .when-open {
+            display: inline;
         }
 
         .pub-more-list {
@@ -608,17 +622,13 @@
             z-index: 1;
         }
 
-        /* Desktop: publications as tiles. A hovered tile grows downward and pushes the rows below it. */
-        @media (min-width: 48.0625rem) {
+        /* Desktop with mouse: publications as tiles */
+        @media (min-width: 48.0625rem) and (hover: hover) {
             .pub-list,
             .pub-more-list {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 grid-auto-rows: 8.5rem;
                 align-items: start;
-            }
-
-            .pub-more {
-                grid-column: 1 / -1;
             }
 
             .pub {
@@ -646,10 +656,11 @@
                 flex: 1;
                 flex-direction: column;
                 align-items: stretch;
-                gap: 0.6rem;
+                gap: 0.25rem;
             }
 
             .pub-title {
+                flex: none;
                 white-space: normal;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
@@ -882,6 +893,7 @@
 
         footer img {
             height: 3.125rem;
+            width: auto;
             margin: 0 1.5rem 0.875rem;
         }
 
@@ -899,7 +911,7 @@
             nav ul {
                 display: none;
                 position: absolute;
-                top: 3.75rem;
+                top: 100%;
                 left: 0;
                 right: 0;
                 background: var(--bg);
@@ -1032,7 +1044,7 @@
                 margin-left: 0;
             }
 
-            .pub-list + p {
+            .pub-more + p {
                 text-align: center;
             }
 
@@ -1040,15 +1052,17 @@
                 text-align: center;
             }
 
-            .pub.first-author {
+            .pub.first-author,
+            .pub.last-author {
                 border-left: none;
-                border-top: 3px solid var(--accent);
+                border-top: 3px solid var(--ring);
                 padding-left: var(--card-pad-x);
                 padding-top: var(--card-pad-y);
             }
 
             @media (hover: hover) {
-                .pub.first-author:hover {
+                .pub.first-author:hover,
+                .pub.last-author:hover {
                     box-shadow: inset 2px 0 0 0 var(--ring), inset -2px 0 0 0 var(--ring), inset 0 -2px 0 0 var(--ring);
                 }
             }
@@ -1089,7 +1103,7 @@
 <body>
     <nav role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="#" class="logo"><img src="images/GUARRACINOxLAB.png" alt="Guarracino Lab"></a>
+            <a href="#" class="logo"><img src="images/GUARRACINOxLAB.png" width="1101" height="235" alt="Guarracino Lab"></a>
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -1114,34 +1128,34 @@
 
     <section id="research" class="section-alt">
         <h2>Research</h2>
-        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>representation</strong> into implicit and queryable alignments and graphs to <strong>pangenome<span class="x">&times;</span>association</strong> with graph-based markers. We apply it to <strong>pangenome<span class="x">&times;</span>fragility</strong>, <strong>cancer<span class="x">&times;</span>pangenomics</strong>, and beyond to complex disease.</p>
+        <p class="research-overview">We span the full pangenomics stack, from <strong>pangenome<span class="x">&times;</span>representation</strong>, with implicit alignments and graphs you can query, to <strong>pangenome<span class="x">&times;</span>association</strong>, with graph-based markers. We apply our tools to <strong>pangenome<span class="x">&times;</span>fragility</strong>, <strong>cancer<span class="x">&times;</span>pangenomics</strong>, and complex disease.</p>
         <div class="research-areas">
             <div class="research-area">
-                <img src="images/research/pangenome-x-representation.svg" alt="CIGAR alignment path with error-bounded and diagonal-band tracepoints">
+                <img src="images/research/pangenome-x-representation.svg" width="1152" height="648" loading="lazy" alt="CIGAR alignment path with error-bounded and diagonal-band tracepoints">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Representation</h3>
                     <p>We represent pangenomes implicitly, without building a graph. Tracepoints compress alignments, and impg queries them to build graphs on demand. These approaches make population-scale analysis accessible.</p>
                 </div>
             </div>
             <div class="research-area">
-                <img src="images/research/pangenome-x-association.svg" alt="Pangenome graph nodes tested as markers, with a known and a novel significant node in the Manhattan plot below">
+                <img src="images/research/pangenome-x-association.svg" width="1600" height="900" loading="lazy" alt="Pangenome graph nodes tested as markers, with a known and a novel significant node in the Manhattan plot below">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Association</h3>
                     <p>We leverage pangenomes for genome-wide association studies, finding trait associations with structural variants absent from linear references. Our methods use graph features, not variant calls, as genetic markers.</p>
                 </div>
             </div>
             <div class="research-area">
-                <img src="images/research/pangenome-x-fragility.svg" alt="Hidden telomere repeats and how we read them">
+                <img src="images/research/pangenome-x-fragility.svg" width="1600" height="900" loading="lazy" alt="Hidden telomere repeats and how we read them">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Fragility</h3>
                     <p>We study hidden telomere repeats in the human pangenome, weak spots where DNA can break. In glioblastoma, we read each DNA molecule on its own to find markers of unstable tumors and track their evolution.</p>
                 </div>
             </div>
             <div class="research-area">
-                <img src="images/research/placeholder.svg" alt="Cancer × Pangenomics">
+                <img src="images/research/placeholder.svg" width="1600" height="900" loading="lazy" alt="Cancer × Pangenomics">
                 <div class="text">
                     <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
-                    <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single reference-based approaches miss.</p>
+                    <p>We construct personalized pangenomes from tumor and matched normal samples using long-read sequencing and de novo assembly. This approach reveals somatic structural variation that single-reference approaches miss.</p>
                 </div>
             </div>
         </div>
@@ -1183,12 +1197,12 @@
         <p class="new-lab-note">The lab opened in January 2026. We are actively building the team.</p>
         <div class="team-grid">
             <div class="team-member">
-                <a href="https://andreaguarracino.github.io/" target="_blank"><img class="photo-img" style="object-position: 50% 0;" src="images/team/Andrea_Guarracino_2022.jpg" alt="Andrea Guarracino"></a>
+                <a href="https://andreaguarracino.github.io/" target="_blank"><img class="photo-img" style="object-position: 50% 0;" src="images/team/Andrea_Guarracino_2022.jpg" width="270" height="304" alt="Andrea Guarracino"></a>
                 <h3><a href="https://andreaguarracino.github.io/" target="_blank" title="Personal website">Andrea Guarracino</a></h3>
                 <p class="role"><strong>Principal<span class="x">&times;</span>Investigator</strong></p>
             </div>
             <div class="team-member">
-                <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank"><img class="photo-img" src="images/team/alejandro-ortigas-vasquez.jpg" alt="Alejandro Ortigas-Vasquez"></a>
+                <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank"><img class="photo-img" src="images/team/alejandro-ortigas-vasquez.jpg" width="450" height="450" alt="Alejandro Ortigas-Vasquez"></a>
                 <h3><a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" title="Google Scholar">Alejandro Ortigas-Vasquez</a></h3>
                 <p class="role"><strong>Postdoc<span class="x">&times;</span>Fellow</strong></p>
             </div>
@@ -1375,8 +1389,9 @@
                     </div>
                 </div>
             </div>
-            <details class="pub-more">
-                <summary><span>Show all publications</span></summary>
+        </div>
+        <details class="pub-more">
+                <summary><span class="when-closed">Show other publications</span><span class="when-open">Close other publications</span></summary>
                 <div class="pub-more-list">
                 <div class="pub">
                     <div class="pub-head">
@@ -1490,8 +1505,7 @@
                     </div>
                 </div>
                 </div>
-            </details>
-        </div>
+        </details>
         <p style="margin-top: 1.25rem; color: var(--text-muted);">
             Full list on <a href="https://scholar.google.com/citations?user=zABbjIoAAAAJ" target="_blank">Google Scholar</a> or <a href="https://orcid.org/0000-0001-9744-131X" target="_blank">ORCID</a>.
         </p>
@@ -1515,7 +1529,7 @@
                 <p>
                     <a href="https://andreaguarracino.github.io/" target="_blank">CV</a><br>
                     <a href="https://github.com/AndreaGuarracino" target="_blank">GitHub</a><br>
-                    <a href="https://twitter.com/AndresGuarahino" target="_blank">Twitter</a>
+                    <a href="https://twitter.com/AndresGuarahino" target="_blank">Twitter / X</a>
                 </p>
             </div>
         </div>
@@ -1523,9 +1537,9 @@
     </main>
 
     <footer>
-        <a href="https://www.tgen.org/" target="_blank"><img src="images/partners/tgen.png" alt="TGen"></a>
-        <a href="https://www.cityofhope.org/" target="_blank"><img src="images/partners/coh.png" alt="City of Hope"></a>
-        <p><span id="year"></span> Guarracino<span class="x">&times;</span>Lab · TGen</p>
+        <a href="https://www.tgen.org/" target="_blank"><img src="images/partners/tgen.png" width="1500" height="551" loading="lazy" alt="TGen"></a>
+        <a href="https://www.cityofhope.org/" target="_blank"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></a>
+        <p><span id="year"></span> Guarracino<span class="x">&times;</span>Lab</p>
     </footer>
 
     <script>
