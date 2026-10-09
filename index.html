@@ -788,17 +788,17 @@
             gap: 0 0.5rem;
         }
 
+        /* Journal under the title, visible in compact cards */
+        .pub-head .pub-venue {
+            flex: none;
+        }
+
         .pub-venue {
             font-family: var(--mono);
             font-size: 0.8rem;
             color: var(--accent);
         }
 
-        .pub-sep {
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
 
         .pub-links {
             font-family: var(--mono);
@@ -895,12 +895,12 @@
             .pub-list,
             .pub-more-list {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
-                grid-auto-rows: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
+                grid-auto-rows: calc(4.65 * 1.0625rem + 1.55 * 0.8rem + 0.25rem + 2 * var(--card-pad-y));
                 align-items: start;
             }
 
             .pub {
-                height: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
+                height: calc(4.65 * 1.0625rem + 1.55 * 0.8rem + 0.25rem + 2 * var(--card-pad-y));
                 display: flex;
                 flex-direction: column;
                 transition: box-shadow 0.2s;
@@ -910,7 +910,7 @@
             .pub:hover,
             .pub:has(:focus-visible) {
                 height: auto;
-                min-height: calc(4.65 * 1.0625rem + 2 * var(--card-pad-y));
+                min-height: calc(4.65 * 1.0625rem + 1.55 * 0.8rem + 0.25rem + 2 * var(--card-pad-y));
                 position: relative;
                 z-index: 5;
                 filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.16));
@@ -1402,107 +1402,107 @@
         <div class="pub-list">
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.64898/2026.07.10.737660" target="_blank" title="Concerted evolution and unorthodox recombination of human subtelomeres">Concerted evolution and unorthodox recombination of human subtelomeres</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.64898/2026.07.10.737660" target="_blank" title="Concerted evolution and unorthodox recombination of human subtelomeres">Concerted evolution and unorthodox recombination of human subtelomeres</a></div><span class="pub-venue">bioRxiv (2026)</span>
                     <span class="pub-badges"><span class="preprint-badge">Preprint</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors"><span class="highlight">Guarracino A</span>, Gyamfi&nbsp;A, Human Pangenome Reference Consortium, Garrison&nbsp;E</div>
-                        <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.10.737660" target="_blank">DOI</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.10.737660" target="_blank">DOI</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub last-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank" title="Adaptive tracepoints for pangenome alignment compression">Adaptive tracepoints for pangenome alignment compression</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank" title="Adaptive tracepoints for pangenome alignment compression">Adaptive tracepoints for pangenome alignment compression</a></div><span class="pub-venue">bioRxiv (2026)</span>
                     <span class="pub-badges"><span class="preprint-badge">Preprint</span><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">Kaushan&nbsp;H, <span class="nw">Marco-Sola&nbsp;S</span>, Garrison&nbsp;E, Prins&nbsp;P, <span class="highlight">Guarracino A</span></div>
-                        <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank">DOI</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.64898/2026.02.16.706236" target="_blank">DOI</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1186/s13059-026-04242-4" target="_blank" title="COSIGT: population-scalable genotyping of complex loci from low-coverage sequencing data using pangenome graphs">COSIGT: population-scalable genotyping of complex loci from low-coverage sequencing data using pangenome graphs</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1186/s13059-026-04242-4" target="_blank" title="COSIGT: population-scalable genotyping of complex loci from low-coverage sequencing data using pangenome graphs">COSIGT: population-scalable genotyping of complex loci from low-coverage sequencing data using pangenome graphs</a></div><span class="pub-venue">Genome Biology (2026)</span>
                     <span class="pub-badges"><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">Bolognini&nbsp;D*, <span class="highlight">Guarracino A</span>*, Paleni&nbsp;C, Dudley&nbsp;TS, Iacoviello&nbsp;L, Raveane&nbsp;A, Sudmant&nbsp;PH, Garrison&nbsp;E, Soranzo&nbsp;N</div>
-                        <div class="pub-meta"><span class="pub-venue">Genome Biology (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1186/s13059-026-04242-4" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42711702/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1186/s13059-026-04242-4" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42711702/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank" title="The formation and propagation of human Robertsonian chromosomes">The formation and propagation of human Robertsonian chromosomes</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank" title="The formation and propagation of human Robertsonian chromosomes">The formation and propagation of human Robertsonian chromosomes</a></div><span class="pub-venue">Nature (2025)</span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">de&nbsp;Lima&nbsp;LG*, <span class="highlight">Guarracino A</span>*, Koren&nbsp;S*, ... Garrison&nbsp;E, Phillippy&nbsp;AM, Gerton&nbsp;JL</div>
-                        <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40993387/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-09540-8" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40993387/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1038/s41592-024-02430-3" target="_blank" title="Building pangenome graphs">Building pangenome graphs</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1038/s41592-024-02430-3" target="_blank" title="Building pangenome graphs">Building pangenome graphs</a></div><span class="pub-venue">Nature Methods (2024)</span>
                     <span class="pub-badges"><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">Garrison&nbsp;E*, <span class="highlight">Guarracino A</span>*, Heumos&nbsp;S, Villani&nbsp;F, Bao&nbsp;Z, ... Prins&nbsp;P</div>
-                        <div class="pub-meta"><span class="pub-venue">Nature Methods (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41592-024-02430-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39433878/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41592-024-02430-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39433878/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btae363" target="_blank" title="Pangenome graph layout by Path-Guided Stochastic Gradient Descent">Pangenome graph layout by Path-Guided Stochastic Gradient Descent</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btae363" target="_blank" title="Pangenome graph layout by Path-Guided Stochastic Gradient Descent">Pangenome graph layout by Path-Guided Stochastic Gradient Descent</a></div><span class="pub-venue">Bioinformatics (2024)</span>
                     <span class="pub-badges"><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">Heumos&nbsp;S*, <span class="highlight">Guarracino A</span>*, Schmelzle&nbsp;JM, Li&nbsp;J, Zhang&nbsp;Z, ... Garrison&nbsp;E</div>
-                        <div class="pub-meta"><span class="pub-venue">Bioinformatics (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btae363" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/38960860/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btae363" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/38960860/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-05976-y" target="_blank" title="Recombination between heterologous human acrocentric chromosomes">Recombination between heterologous human acrocentric chromosomes</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-05976-y" target="_blank" title="Recombination between heterologous human acrocentric chromosomes">Recombination between heterologous human acrocentric chromosomes</a></div><span class="pub-venue">Nature (2023)</span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors"><span class="highlight">Guarracino A</span>, Buonaiuto&nbsp;S, de&nbsp;Lima&nbsp;LG, Potapova&nbsp;T, Rhie&nbsp;A, Koren&nbsp;S, ... Colonna&nbsp;V, Garrison&nbsp;E</div>
-                        <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05976-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165241/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05976-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165241/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub last-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btac743" target="_blank" title="Unbiased pangenome graphs">Unbiased pangenome graphs</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btac743" target="_blank" title="Unbiased pangenome graphs">Unbiased pangenome graphs</a></div><span class="pub-venue">Bioinformatics (2022)</span>
                     <span class="pub-badges"><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors">Garrison&nbsp;E, <span class="highlight">Guarracino A</span></div>
-                        <div class="pub-meta"><span class="pub-venue">Bioinformatics (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac743" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36448683/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac743" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36448683/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="pub first-author">
                 <div class="pub-head">
-                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btac308" target="_blank" title="ODGI: understanding pangenome graphs">ODGI: understanding pangenome graphs</a></div>
+                    <div class="pub-title"><a href="https://doi.org/10.1093/bioinformatics/btac308" target="_blank" title="ODGI: understanding pangenome graphs">ODGI: understanding pangenome graphs</a></div><span class="pub-venue">Bioinformatics (2022)</span>
                     <span class="pub-badges"><span class="software-badge">Software</span></span>
                 </div>
                 <div class="pub-details">
                     <div class="pub-details-inner">
                         <div class="pub-authors"><span class="highlight">Guarracino A</span>*, Heumos&nbsp;S*, Nahnsen&nbsp;S, Prins&nbsp;P, Garrison&nbsp;E</div>
-                        <div class="pub-meta"><span class="pub-venue">Bioinformatics (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac308" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/35552372/" target="_blank">PubMed</a></span></div>
+                        <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btac308" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/35552372/" target="_blank">PubMed</a></span></div>
                     </div>
                 </div>
             </div>
@@ -1512,135 +1512,135 @@
                 <div class="pub-more-list">
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.64898/2026.07.21.739710" target="_blank" title="HPRC2: A human pangenome reference with near-complete coverage of common genetic variation">HPRC2: A human pangenome reference with near-complete coverage of common genetic variation</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.64898/2026.07.21.739710" target="_blank" title="HPRC2: A human pangenome reference with near-complete coverage of common genetic variation">HPRC2: A human pangenome reference with near-complete coverage of common genetic variation</a></div><span class="pub-venue">bioRxiv (2026)</span>
                         <span class="pub-badges"><span class="preprint-badge">Preprint</span></span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Lucas&nbsp;JK, Hebbar&nbsp;P, Liao&nbsp;WW, ... <span class="highlight">Guarracino A</span>, ... Phillippy&nbsp;AM, Wang&nbsp;T, Paten&nbsp;B</div>
-                            <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.21.739710" target="_blank">DOI</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.64898/2026.07.21.739710" target="_blank">DOI</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1016/j.cell.2026.06.016" target="_blank" title="A complete diploid human genome benchmark for personalized genomics">A complete diploid human genome benchmark for personalized genomics</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1016/j.cell.2026.06.016" target="_blank" title="A complete diploid human genome benchmark for personalized genomics">A complete diploid human genome benchmark for personalized genomics</a></div><span class="pub-venue">Cell (2026)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Hansen&nbsp;NF, Dwarshuis&nbsp;N, Ji&nbsp;HJ, Rhie&nbsp;A, Loucks&nbsp;H, ... <span class="highlight">Guarracino A</span>, ... Koren&nbsp;S, Zook&nbsp;JM, Phillippy&nbsp;AM</div>
-                            <div class="pub-meta"><span class="pub-venue">Cell (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1016/j.cell.2026.06.016" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42561913/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1016/j.cell.2026.06.016" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/42561913/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.64898/2026.05.01.722316" target="_blank" title="A complete human pancreatic cancer genome">A complete human pancreatic cancer genome</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.64898/2026.05.01.722316" target="_blank" title="A complete human pancreatic cancer genome">A complete human pancreatic cancer genome</a></div><span class="pub-venue">bioRxiv (2026)</span>
                         <span class="pub-badges"><span class="preprint-badge">Preprint</span></span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Wagner&nbsp;J, Keskus&nbsp;AG, Oshima&nbsp;KK, ... <span class="highlight">Guarracino A</span>, ... Logsdon&nbsp;GA, Kolmogorov&nbsp;M, Zook&nbsp;JM</div>
-                            <div class="pub-meta"><span class="pub-venue">bioRxiv (2026)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.64898/2026.05.01.722316" target="_blank">DOI</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.64898/2026.05.01.722316" target="_blank">DOI</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1126/science.adw1931" target="_blank" title="Multispecies pangenomes reveal a pervasive influence of population size on structural variation">Multispecies pangenomes reveal a pervasive influence of population size on structural variation</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1126/science.adw1931" target="_blank" title="Multispecies pangenomes reveal a pervasive influence of population size on structural variation">Multispecies pangenomes reveal a pervasive influence of population size on structural variation</a></div><span class="pub-venue">Science (2025)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Edwards&nbsp;SV, Fang&nbsp;B, Khost&nbsp;D, Kolyfetis&nbsp;GE, Cheek&nbsp;RG, ... Garrison&nbsp;E, <span class="highlight">Guarracino A</span>, Li&nbsp;H, Sackton&nbsp;TB</div>
-                            <div class="pub-meta"><span class="pub-venue">Science (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1126/science.adw1931" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/41379974/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1126/science.adw1931" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/41379974/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-08816-3" target="_blank" title="Complete sequencing of ape genomes">Complete sequencing of ape genomes</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-08816-3" target="_blank" title="Complete sequencing of ape genomes">Complete sequencing of ape genomes</a></div><span class="pub-venue">Nature (2025)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Yoo&nbsp;D, Rhie&nbsp;A, Hebbar&nbsp;P, ... <span class="highlight">Guarracino A</span>, ... Makova&nbsp;KD, Phillippy&nbsp;AM, Eichler&nbsp;EE</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08816-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40205052/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08816-3" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40205052/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-08922-2" target="_blank" title="Human de novo mutation rates from a four-generation pedigree reference">Human de novo mutation rates from a four-generation pedigree reference</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-025-08922-2" target="_blank" title="Human de novo mutation rates from a four-generation pedigree reference">Human de novo mutation rates from a four-generation pedigree reference</a></div><span class="pub-venue">Nature (2025)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Porubsky&nbsp;D, Dashnow&nbsp;H, Sasani&nbsp;TA, ... <span class="highlight">Guarracino A</span>, ... Eberle&nbsp;MA, Eichler&nbsp;EE</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08922-2" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40269156/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-025-08922-2" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40269156/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1016/j.isci.2025.111835" target="_blank" title="Pangenome reconstruction in rats enhances genotype-phenotype mapping and variant discovery">Pangenome reconstruction in rats enhances genotype-phenotype mapping and variant discovery</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1016/j.isci.2025.111835" target="_blank" title="Pangenome reconstruction in rats enhances genotype-phenotype mapping and variant discovery">Pangenome reconstruction in rats enhances genotype-phenotype mapping and variant discovery</a></div><span class="pub-venue">iScience (2025)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Villani&nbsp;F, <span class="highlight">Guarracino A</span>, Ward&nbsp;RR, Green&nbsp;T, Emms&nbsp;M, ... Williams&nbsp;RW, Chen&nbsp;H, Colonna&nbsp;V</div>
-                            <div class="pub-meta"><span class="pub-venue">iScience (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1016/j.isci.2025.111835" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40034122/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1016/j.isci.2025.111835" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/40034122/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-024-08476-9" target="_blank" title="Leveraging a phased pangenome for haplotype design of hybrid potato">Leveraging a phased pangenome for haplotype design of hybrid potato</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-024-08476-9" target="_blank" title="Leveraging a phased pangenome for haplotype design of hybrid potato">Leveraging a phased pangenome for haplotype design of hybrid potato</a></div><span class="pub-venue">Nature (2025)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Cheng&nbsp;L, Wang&nbsp;N, Bao&nbsp;Z, Zhou&nbsp;Q, <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Stein&nbsp;N, Städler&nbsp;T, Zhou&nbsp;Y, Huang&nbsp;S</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2025)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-08476-9" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39843749/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-08476-9" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39843749/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-024-07911-1" target="_blank" title="Recurrent evolution and selection shape structural diversity at the amylase locus">Recurrent evolution and selection shape structural diversity at the amylase locus</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-024-07911-1" target="_blank" title="Recurrent evolution and selection shape structural diversity at the amylase locus">Recurrent evolution and selection shape structural diversity at the amylase locus</a></div><span class="pub-venue">Nature (2024)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Bolognini&nbsp;D, Halgren&nbsp;A, Lou&nbsp;RN, Raveane&nbsp;A, Rocha&nbsp;JL, <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Sudmant&nbsp;PH</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2024)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-07911-1" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39232174/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-024-07911-1" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/39232174/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank" title="A draft human pangenome reference">A draft human pangenome reference</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank" title="A draft human pangenome reference">A draft human pangenome reference</a></div><span class="pub-venue">Nature (2023)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Liao&nbsp;WW, Asri&nbsp;M, Ebler&nbsp;J, ... <span class="highlight">Guarracino A</span>, ... Garrison&nbsp;E, Marschall&nbsp;T, Hall&nbsp;IM, Li&nbsp;H, Paten&nbsp;B</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165242/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37165242/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank" title="The complete sequence of a human Y chromosome">The complete sequence of a human Y chromosome</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank" title="The complete sequence of a human Y chromosome">The complete sequence of a human Y chromosome</a></div><span class="pub-venue">Nature (2023)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Rhie&nbsp;A, Nurk&nbsp;S, Cechova&nbsp;M, ... <span class="highlight">Guarracino A</span>, ... Miga&nbsp;KH, Makova&nbsp;KD, Phillippy&nbsp;AM</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2023)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37612512/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37612512/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
                 <div class="pub">
                     <div class="pub-head">
-                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-022-05325-5" target="_blank" title="Semi-automated assembly of high-quality diploid human reference genomes">Semi-automated assembly of high-quality diploid human reference genomes</a></div>
+                        <div class="pub-title"><a href="https://doi.org/10.1038/s41586-022-05325-5" target="_blank" title="Semi-automated assembly of high-quality diploid human reference genomes">Semi-automated assembly of high-quality diploid human reference genomes</a></div><span class="pub-venue">Nature (2022)</span>
                     </div>
                     <div class="pub-details">
                         <div class="pub-details-inner">
                             <div class="pub-authors">Jarvis&nbsp;ED, Formenti&nbsp;G, Rhie&nbsp;A, <span class="highlight">Guarracino A</span>, Yang&nbsp;C, ... Paten&nbsp;B, Howe&nbsp;K, Miga&nbsp;KH</div>
-                            <div class="pub-meta"><span class="pub-venue">Nature (2022)</span><span class="pub-sep">-</span><span class="pub-links"><a href="https://doi.org/10.1038/s41586-022-05325-5" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36261518/" target="_blank">PubMed</a></span></div>
+                            <div class="pub-meta"><span class="pub-links"><a href="https://doi.org/10.1038/s41586-022-05325-5" target="_blank">DOI</a> <a href="https://pubmed.ncbi.nlm.nih.gov/36261518/" target="_blank">PubMed</a></span></div>
                         </div>
                     </div>
                 </div>
