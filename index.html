@@ -154,6 +154,17 @@
             border-bottom: 1px solid var(--border);
         }
 
+        /* Invisible 4px tap margin (WCAG 2.5.8, 24px) */
+        nav ul a {
+            position: relative;
+        }
+
+        nav ul a::before {
+            content: "";
+            position: absolute;
+            inset: -4px -6px;
+        }
+
         nav a:hover {
             color: var(--accent);
             border-bottom-color: var(--accent);
@@ -262,6 +273,7 @@
         .research-area p,
         .new-lab-note {
             text-align: justify;
+            -webkit-hyphens: auto;
             hyphens: auto;
         }
 
@@ -1014,6 +1026,33 @@
             letter-spacing: 0.05em;
         }
 
+        /* Funding */
+        .funding-list {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .funding-entry {
+            background: var(--bg);
+            padding: var(--card-pad-y) var(--card-pad-x);
+            border-radius: 0.25rem;
+        }
+
+        .fund-name {
+            font-weight: 600;
+        }
+
+        .fund-title {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .fund-meta {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
         /* Contact */
         .contact-info {
             display: grid;
@@ -1038,7 +1077,7 @@
             font-family: var(--mono);
             font-size: 0.8rem;
             color: var(--text-muted);
-            background: var(--bg);
+            background: var(--bg-alt);
         }
 
         footer img {
@@ -1047,12 +1086,8 @@
             margin: 0 1.5rem 0.875rem;
         }
 
-        /* Mobile */
-        @media (max-width: 48rem) {
-            .section-alt {
-                border-image: none;
-            }
-
+        /* Nav: hamburger below 980px, where logo and six links no longer fit */
+        @media (max-width: 61.25rem) {
             .nav-toggle {
                 display: block;
             }
@@ -1099,6 +1134,14 @@
             nav {
                 padding: 0 1.25rem;
             }
+        }
+
+        /* Mobile */
+        @media (max-width: 48rem) {
+            .section-alt {
+                border-image: none;
+            }
+
 
             .hero {
                 padding: 4.5rem 1.25rem 0.875rem;
@@ -1185,7 +1228,8 @@
                 content: "\200B";
             }
 
-            .software-entry {
+            .software-entry,
+            .funding-entry {
                 text-align: center;
                 display: flex;
                 flex-direction: column;
@@ -1200,7 +1244,8 @@
                 white-space: normal;
             }
 
-            .software-entry .x {
+            .software-entry .x,
+            .funding-entry .x {
                 display: none;
             }
 
@@ -1287,6 +1332,18 @@
             opacity: 0;
             pointer-events: none;
         }
+        /* Respect "reduce motion" (WCAG 2.3.3) */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            ::before,
+            ::after {
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1303,6 +1360,7 @@
                 <li><a href="#software">Our<span class="x">&times;</span>Software</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#publications">Selected<span class="x">&times;</span>Publications</a></li>
+                <li><a href="#funding">Funding</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1316,34 +1374,34 @@
 
     <section id="research" class="section-alt">
         <h2>Research</h2>
-        <p class="research-overview">We work across the full pangenomics stack. With <strong>pangenome<span class="x">&times;</span>representation</strong> we build implicit, queryable alignments and graphs, and with <strong>pangenome<span class="x">&times;</span>association</strong> we use graph features as genetic markers. We apply them to <strong>pangenome<span class="x">&times;</span>fragility</strong> in the human genome, to <strong>cancer<span class="x">&times;</span>pangenomics</strong> in tumors, and to complex&nbsp;disease.</p>
+        <p class="research-overview">We work across the full pan&shy;ge&shy;nomics stack. With <strong>pangenome<span class="x">&times;</span>representation</strong> we build im&shy;plic&shy;it, queryable align&shy;ments and graphs, and with <strong>pangenome<span class="x">&times;</span>association</strong> we use graph fea&shy;tures as genetic markers. We apply them to <strong>pangenome<span class="x">&times;</span>fragility</strong> in the human genome, to <strong>cancer<span class="x">&times;</span>pangenomics</strong> in tumors, and to complex&nbsp;disease.</p>
         <div class="research-areas">
             <div class="research-area" data-refs="https://doi.org/10.64898/2026.02.16.706236 https://github.com/pangenome/impg">
                 <img src="images/research/pangenome-x-representation.svg" width="1152" height="648" loading="lazy" alt="CIGAR alignment path with error-bounded and diagonal-band tracepoints">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Representation</h3>
-                    <p>We represent pangenomes implicitly, without building a graph. Tracepoints compress alignments, and impg queries them to build graphs on demand. These approaches make population-scale analysis accessible.</p>
+                    <p>To make pop&shy;u&shy;la&shy;tion-scale anal&shy;y&shy;sis ac&shy;ces&shy;si&shy;ble, we rep&shy;re&shy;sent pan&shy;ge&shy;nomes im&shy;plic&shy;it&shy;ly, without build&shy;ing a graph. Tra&shy;ce&shy;points com&shy;press align&shy;ments, and impg queries them to build graphs on demand.</p>
                 </div>
             </div>
             <div class="research-area" data-refs="https://doi.org/10.1016/j.isci.2025.111835">
                 <img src="images/research/pangenome-x-association.svg" width="1600" height="900" loading="lazy" alt="Pangenome graph nodes tested as markers, with a known and a novel significant node in the Manhattan plot below">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Association</h3>
-                    <p>We leverage pangenomes for genome-wide association studies, finding trait associations with structural variants absent from linear references. Our methods use graph features, not variant calls, as genetic markers.</p>
+                    <p>We find the vari&shy;ants behind traits and disease risk, using pan&shy;ge&shy;nome graph fea&shy;tures, not variant calls, as markers. With long reads, we are re&shy;solv&shy;ing the hidden alleles on prostate cancer risk hap&shy;lo&shy;types.</p>
                 </div>
             </div>
             <div class="research-area" data-refs="https://doi.org/10.64898/2026.07.10.737660">
                 <img src="images/research/pangenome-x-fragility.svg" width="1600" height="900" loading="lazy" alt="Hidden telomere repeats and how we read them">
                 <div class="text">
                     <h3>Pangenome<span class="x">&times;</span>Fragility</h3>
-                    <p>We study hidden telomere repeats in the human pangenome, weak spots where DNA can break. In glioblastoma, we read each DNA molecule on its own to find markers of unstable tumors and track their evolution.</p>
+                    <p>We study hidden telom&shy;ere repeats in the human pan&shy;ge&shy;nome, weak spots where DNA can break. In glioblas&shy;toma, we read each DNA mol&shy;e&shy;cule on its own to find markers of un&shy;sta&shy;ble tumors and track their evo&shy;lu&shy;tion.</p>
                 </div>
             </div>
             <div class="research-area" data-refs="https://doi.org/10.1038/s41592-024-02430-3 https://doi.org/10.1093/bioinformatics/btac308 https://doi.org/10.64898/2026.05.01.722316">
                 <img src="images/research/cancer-x-pangenomics.svg" width="1600" height="900" loading="lazy" alt="Tumor translocation breakpoint between chromosomes 19 and 22, inside pseudohomologous repeats">
                 <div class="text">
                     <h3>Cancer<span class="x">&times;</span>Pangenomics</h3>
-                    <p>We build personalized pangenomes from tumor and matched normal samples with long-read sequencing and de novo assembly. They reveal somatic structural variants that a single reference misses.</p>
+                    <p>We find the somatic struc&shy;tural vari&shy;ants that a single ref&shy;er&shy;ence misses. We build per&shy;son&shy;al&shy;ized pan&shy;ge&shy;nomes from tumor and matched normal samples with long-read se&shy;quenc&shy;ing and de novo as&shy;sem&shy;bly.</p>
                 </div>
             </div>
         </div>
@@ -1651,16 +1709,27 @@
         </p>
     </section>
 
-    <section id="contact" class="section-alt">
+    <section id="funding" class="section-alt">
+        <h2>Funding</h2>
+        <div class="funding-list">
+            <div class="funding-entry">
+                <span class="fund-name">Sylvia Chase Early Career Training Program</span> <span class="x">&ndash;</span>
+                <span class="fund-title">Resolving the hidden alleles on prostate cancer risk haplotypes</span> <span class="x">&ndash;</span>
+                <span class="fund-meta">TGen, 2026&ndash;2027</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
         <h2>Contact</h2>
         <div class="contact-info">
             <div class="contact-block">
                 <h3>Email</h3>
-                <p><a href="mailto:aguarracino@tgen.org">aguarracino@tgen.org</a></p>
+                <p><a href="mailto:aguarracino@tgen.org">aguar&shy;ra&shy;ci&shy;no@tgen.org</a></p>
             </div>
             <div class="contact-block">
                 <h3>Address</h3>
-                <p><a href="https://www.google.com/maps/search/?api=1&query=TGen+445+N+5th+Street+Phoenix+AZ+85004" target="_blank">Translational Genomics Research Institute<br>
+                <p><a href="https://www.google.com/maps/search/?api=1&query=TGen+445+N+5th+Street+Phoenix+AZ+85004" target="_blank">Trans&shy;la&shy;tion&shy;al Ge&shy;nomics Re&shy;search In&shy;sti&shy;tute<br>
                 445 N 5th Street<br>
                 Phoenix, AZ 85004</a></p>
             </div>
