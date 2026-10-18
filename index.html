@@ -372,16 +372,65 @@
                 grid-auto-columns: minmax(0, 1fr);
                 grid-auto-rows: var(--row, auto);
             }
+        }
 
-            /* Rest: equal heights (--row set by script). Hover grows over the content below. */
+        /* Mouse, any width: fixed card height, hover swaps title for details */
+        @media (hover: hover) {
+            /* Rest: equal heights (--row set by script) */
             .research-more.pub-list > * {
                 height: var(--row, auto);
             }
 
+            /* Hover swaps title for authors inside the same box: no growth */
+            .research-more .pub-head,
+            .research-more .pub-details {
+                transition: opacity 0.2s;
+            }
+
+            /* Details overlay the card; rest height comes from the title only */
+            .research-more .pub-details {
+                position: absolute;
+                inset: var(--card-pad-y) var(--card-pad-x);
+                grid-template-rows: minmax(0, 1fr);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .research-more .pub-details-inner {
+                display: flex;
+                flex-direction: column;
+                padding-top: 0;
+                padding-bottom: 5px;
+            }
+
+            /* Script sets the line clamp to the space left */
+            .research-more .pub-authors {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                flex: none;
+            }
+
+            .research-more .pub-meta {
+                margin-top: auto;
+            }
+
             .research-more .pub:hover,
             .research-more .pub:has(:focus-visible) {
-                height: auto;
-                min-height: var(--row, 0);
+                height: var(--row, auto);
+                z-index: auto;
+                filter: none;
+                min-height: 0;
+            }
+
+            .research-more .pub:is(:hover, :has(:focus-visible)):not(.dismissed) .pub-head {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .research-more .pub:is(:hover, :has(:focus-visible)):not(.dismissed) .pub-details {
+                opacity: 1;
+                visibility: visible;
             }
         }
 
@@ -1811,7 +1860,12 @@
             document.querySelectorAll('.research-more').forEach(function(panel) {
                 panel.style.removeProperty('--row');
                 var h = Math.max.apply(null, [].map.call(panel.children, function(c) { return c.offsetHeight; }));
-                panel.style.setProperty('--row', h + 'px');
+                panel.style.setProperty('--row', Math.max(h, 80) + 'px');  // room for authors and links
+                panel.querySelectorAll('.pub-authors').forEach(function(a) {
+                    var box = a.parentNode, lh = parseFloat(getComputedStyle(a).lineHeight);
+                    var room = box.clientHeight - box.querySelector('.pub-meta').offsetHeight - 5;
+                    a.style.webkitLineClamp = Math.max(1, Math.floor(room / lh));
+                });
             });
         }
         window.addEventListener('load', sizePanels);
