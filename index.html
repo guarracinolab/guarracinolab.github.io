@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
+    <script>
+        // Theme: saved choice, else system setting
+        var themePref = null, themeMedia = matchMedia('(prefers-color-scheme: dark)');
+        try { themePref = localStorage.getItem('theme'); } catch (e) { console.warn('Theme: storage blocked', e); }
+        function applyTheme() {
+            var dark = themePref ? themePref === 'dark' : themeMedia.matches, root = document.documentElement;
+            root.dataset.theme = dark ? 'dark' : 'light';
+            document.querySelectorAll('source[data-dark]').forEach(function(s) { s.media = dark ? 'all' : 'not all'; });
+            var b = document.querySelector('.theme-toggle');
+            if (b) b.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        }
+        applyTheme();
+        themeMedia.addEventListener('change', applyTheme);
+    </script>
     <title>Guarracino Lab | Translational Pangenomics</title>
     <meta name="description" content="We build and analyze pangenomes to study genome variation, cancer, and complex disease. Translational Genomics Research Institute, Phoenix, AZ.">
     <meta property="og:title" content="Guarracino Lab | Translational Pangenomics">
@@ -58,6 +72,7 @@
         }
 
         :root {
+            color-scheme: light;
             --bg: #faf9f7;
             --bg-alt: #f0eeeb;
             --text: #1a1a1a;
@@ -77,9 +92,26 @@
             --line: 2px;
         }
 
-        /* Dark theme: follows the system setting */
+        /* Dark theme: set by the head script (system setting or button) */
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #141615;
+            --bg-alt: #1f2220;
+            --text: #e6e4e0;
+            --text-muted: #a9a9a6;
+            --accent: #7cc4a4;
+            --accent-light: #2d5a4a;
+            --border: #3b3f3c;
+            --x: #e86a78;
+            --hl-first: rgba(124, 196, 164, 0.14);
+            --hl-last: #f0995e;
+            --hl-last-bg: rgba(240, 153, 94, 0.14);
+        }
+        :root[data-theme="dark"] .research-area img { background: var(--bg); }
+        /* Without JavaScript: follow the system setting */
         @media (prefers-color-scheme: dark) {
-            :root {
+            :root:not([data-theme]) {
+                color-scheme: dark;
                 --bg: #141615;
                 --bg-alt: #1f2220;
                 --text: #e6e4e0;
@@ -92,7 +124,7 @@
                 --hl-last: #f0995e;
                 --hl-last-bg: rgba(240, 153, 94, 0.14);
             }
-            :root .research-area img { background: var(--bg); }
+            :root:not([data-theme]) .research-area img { background: var(--bg); }
         }
 
         * {
@@ -166,6 +198,32 @@
             display: flex;
             gap: 1.5rem;
             list-style: none;
+            margin-left: auto;
+        }
+
+        /* Theme button */
+        .theme-toggle {
+            margin-left: 1.5rem;
+            width: 2rem;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Without JavaScript the button does nothing */
+        :root:not([data-theme]) .theme-toggle {
+            display: none;
         }
 
         nav a {
@@ -1158,10 +1216,16 @@
             margin: 0 1.5rem 0.875rem;
         }
 
-        /* Nav: hamburger below 980px, where logo and six links no longer fit */
-        @media (max-width: 61.25rem) {
+        /* Nav: hamburger below 1024px, where logo, six links and theme button no longer fit */
+        @media (max-width: 64rem) {
             .nav-toggle {
                 display: block;
+                order: 1;
+            }
+
+            .theme-toggle {
+                margin-left: auto;
+                margin-right: 0.5rem;
             }
 
             nav ul {
@@ -1452,6 +1516,7 @@
                 <li><a href="#funding">Funding</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" type="button" aria-label="Switch theme"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
         </div>
     </nav>
 
@@ -1835,12 +1900,20 @@
     </main>
 
     <footer>
-        <a href="https://www.tgen.org/" target="_blank"><picture><source srcset="images/partners/tgen-dark.png" media="(prefers-color-scheme: dark)"><img src="images/partners/tgen.png" width="686" height="252" loading="lazy" alt="TGen"></picture></a>
-        <a href="https://www.cityofhope.org/" target="_blank"><picture><source srcset="images/partners/coh-dark.png" media="(prefers-color-scheme: dark)"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></picture></a>
+        <a href="https://www.tgen.org/" target="_blank"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="images/partners/tgen-dark.png"><img src="images/partners/tgen.png" width="686" height="252" loading="lazy" alt="TGen"></picture></a>
+        <a href="https://www.cityofhope.org/" target="_blank"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="images/partners/coh-dark.png"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></picture></a>
         <p><span id="year"></span> Guarracino<span class="x">&times;</span>Lab</p>
     </footer>
 
     <script>
+        // Theme button: flip the shown theme; matching the system means auto
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            var want = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            themePref = (want === 'dark') === themeMedia.matches ? null : want;
+            try { themePref ? localStorage.setItem('theme', themePref) : localStorage.removeItem('theme'); } catch (e) { console.warn('Theme: choice not saved', e); }
+            applyTheme();
+        });
+        applyTheme();
         // Mobile nav toggle
         var navToggle = document.querySelector('.nav-toggle');
         var navMenu = document.querySelector('nav ul');
