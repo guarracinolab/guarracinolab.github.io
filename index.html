@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Guarracino Lab | Translational Pangenomics</title>
     <meta name="description" content="We build and analyze pangenomes to study genome variation, cancer, and complex disease. Translational Genomics Research Institute, Phoenix, AZ.">
     <meta property="og:title" content="Guarracino Lab | Translational Pangenomics">
@@ -64,12 +65,34 @@
             --accent: #2d5a4a;
             --accent-light: #3d7a64;
             --border: #d8d4ce;
+            --x: #af303e;
+            --hl-first: rgba(45, 90, 74, 0.1);
+            --hl-last: #a1440f;
+            --hl-last-bg: rgba(179, 78, 24, 0.1);
             --mono: 'IBM Plex Mono', monospace;
             --sans: 'IBM Plex Sans', sans-serif;
             --display: 'Archivo Black', sans-serif;
             --card-pad-y: 0.75rem;
             --card-pad-x: 1.25rem;
             --line: 2px;
+        }
+
+        /* Dark theme: follows the system setting */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #141615;
+                --bg-alt: #1f2220;
+                --text: #e6e4e0;
+                --text-muted: #a9a9a6;
+                --accent: #7cc4a4;
+                --accent-light: #2d5a4a;
+                --border: #3b3f3c;
+                --x: #e86a78;
+                --hl-first: rgba(124, 196, 164, 0.14);
+                --hl-last: #f0995e;
+                --hl-last-bg: rgba(240, 153, 94, 0.14);
+            }
+            footer img { filter: invert(1) hue-rotate(180deg); }
         }
 
         * {
@@ -189,7 +212,7 @@
         }
 
         .x {
-            color: #af303e;
+            color: var(--x);
             font-size: 1.1em;
             margin: 0 0.02em;
             vertical-align: -0.05em;
@@ -771,7 +794,7 @@
         .pub-authors .highlight {
             color: var(--accent);
             font-weight: 600;
-            background: rgba(45, 90, 74, 0.1);
+            background: var(--hl-first);
             padding: 0.1em 0.3em;
             border-radius: 3px;
             white-space: nowrap;
@@ -784,8 +807,8 @@
 
         /* Last-author papers: highlight in the orange of their border */
         .pub.last-author .highlight {
-            color: #a1440f;
-            background: rgba(179, 78, 24, 0.1);
+            color: var(--hl-last);
+            background: var(--hl-last-bg);
         }
 
         .pub.first-author {
