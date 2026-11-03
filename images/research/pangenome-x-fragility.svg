@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<style>@media (prefers-color-scheme: dark){[fill="#fff"]{fill:#141615}[fill="#4a6fb8"]{fill:#8fb0ea}rect[fill="#2c4a7c"]{fill:#4f74b8}text[fill="#2c4a7c"]{fill:#8fb0ea}[stroke="#d32f2f"]{stroke:#f06a6a}[fill="#d32f2f"]{fill:#f06a6a}}</style>
 <title>Telomeres, hidden telomere repeats (ITSs) and weak spots</title>
 <rect width="1600" height="900" fill="#fff"/>
 <defs><marker id="ah" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6a8fd4"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d32f2f"/></marker></defs>

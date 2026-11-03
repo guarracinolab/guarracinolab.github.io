@@ -92,7 +92,7 @@
                 --hl-last: #f0995e;
                 --hl-last-bg: rgba(240, 153, 94, 0.14);
             }
-            footer img { filter: invert(1) hue-rotate(180deg); }
+            :root .research-area img { background: var(--bg); }
         }
 
         * {
@@ -1835,8 +1835,8 @@
     </main>
 
     <footer>
-        <a href="https://www.tgen.org/" target="_blank"><img src="images/partners/tgen.png" width="686" height="252" loading="lazy" alt="TGen"></a>
-        <a href="https://www.cityofhope.org/" target="_blank"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></a>
+        <a href="https://www.tgen.org/" target="_blank"><picture><source srcset="images/partners/tgen-dark.png" media="(prefers-color-scheme: dark)"><img src="images/partners/tgen.png" width="686" height="252" loading="lazy" alt="TGen"></picture></a>
+        <a href="https://www.cityofhope.org/" target="_blank"><picture><source srcset="images/partners/coh-dark.png" media="(prefers-color-scheme: dark)"><img src="images/partners/coh.png" width="600" height="252" loading="lazy" alt="City of Hope"></picture></a>
         <p><span id="year"></span> Guarracino<span class="x">&times;</span>Lab</p>
     </footer>
 

@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="19 0 1600 900" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<style>@media (prefers-color-scheme: dark){[fill="#fff"]{fill:#141615}[fill="#d9d9d9"]{fill:#4a4d4b}[fill="#a9bfee"]{fill:#34507f}[fill="#e6c58c"]{fill:#6e5a34}[stroke="#444"]{stroke:#8a8d8b}[stroke="#222"]{stroke:#e6e4e0}[fill="#222"]{fill:#e6e4e0}[fill="#4a6fb8"]{fill:#8fb0ea}[fill="#916a2f"]{fill:#d9b277}[stroke="#d32f2f"]{stroke:#f06a6a}[fill="#d32f2f"]{fill:#f06a6a}}</style>
 <title>One pangenome graph, three paths: chr21, chr14 and a sample that translocates</title>
 <rect width="1600" height="900" fill="#fff"/>
 <rect x="407.5" y="210.5" width="175" height="170" rx="24" fill="#d9d9d9" stroke="#444" stroke-width="3"/>

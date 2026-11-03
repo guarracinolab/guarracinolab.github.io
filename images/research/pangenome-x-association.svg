@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.5 26 1600 900" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<style>@media (prefers-color-scheme: dark){[fill="#fff"]{fill:#141615}[stroke="#222"]{stroke:#e6e4e0}[fill="#1a1a1a"]{fill:#e6e4e0}[stroke="#666"]{stroke:#9a9a9a}[fill="#666"]{fill:#9a9a9a}[fill="#f6e9fb"]{fill:#2e2235}[stroke="#4b2a5a"]{stroke:#c9a3d9}[fill="#6b3d7a"]{fill:#d4b0e3}[stroke="#9b0000"]{stroke:#f06a6a}circle[fill="#3a68ad"]{fill:#6a8fd4}}</style>
 <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#666"/></marker></defs>
 <rect width="1600" height="900" fill="#fff"/>
 <line x1="215" y1="150" x2="1535" y2="150" stroke="#666" stroke-width="6"/>
